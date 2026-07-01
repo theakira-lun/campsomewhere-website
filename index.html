@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
       @font-face{font-family:"OPPOSans CSW";src:url("brand/working/source-analysis/fonts/OPPOSans-B.ttf") format("truetype");font-weight:700}
       :root{--ink:#231815;--black:#080808;--paper:#fff;--soft:#f1f1ef;--warm:#f7f4ea;--line:rgba(35,24,21,.18);--muted:rgba(35,24,21,.62);--pad:clamp(18px,3.8vw,72px);font-family:"OPPOSans CSW","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}
       *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px}img{display:block;width:100%;height:100%;object-fit:cover}a{color:inherit;text-decoration:none}figure{margin:0;overflow:hidden}
-      .topbar{position:fixed;top:14px;left:var(--pad);right:var(--pad);z-index:20;display:grid;grid-template-columns:clamp(172px,18vw,236px) 1fr;gap:20px;align-items:start}.brand-mark{display:block;padding:8px 12px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);backdrop-filter:blur(14px)}.brand-mark img{height:auto;object-fit:contain}.nav-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}.nav-pill{min-height:38px;padding:11px 14px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);font:700 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(14px)}
+      .topbar{position:fixed;top:14px;left:var(--pad);right:var(--pad);z-index:20;display:grid;grid-template-columns:clamp(172px,18vw,236px) 1fr auto;gap:20px;align-items:start}.brand-mark{display:block;padding:8px 12px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);backdrop-filter:blur(14px)}.brand-mark img{height:auto;object-fit:contain}.nav-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}.nav-pill{min-height:38px;padding:11px 14px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);font:700 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(14px)}.language-switch{display:grid;grid-template-columns:repeat(4,auto);gap:2px}.language-switch button{min-height:38px;padding:0 10px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);font:700 11px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;color:var(--ink);backdrop-filter:blur(14px);cursor:pointer}.language-switch button.active{background:var(--black);color:var(--paper);border-color:var(--black)}
       .mono,.eyebrow,.metadata,.section-code,summary span,.case-row span,.brand-index span,.big-link span,.tag{font-family:"Poppins CSW",monospace;letter-spacing:.04em;text-transform:uppercase}
       section{position:relative;padding:clamp(70px,7vw,118px) var(--pad);overflow:hidden}.hero{min-height:100svh;display:grid;align-content:end;color:var(--paper);background:var(--black)}.hero figure{position:absolute;inset:0}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.78)),linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.04) 54%,rgba(0,0,0,.44))}.hero-copy{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.38fr);gap:clamp(28px,5vw,84px);align-items:end}.metadata{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:46px;font-size:12px}.hero h1{max-width:980px;margin:0;font-size:clamp(58px,6.4vw,104px);line-height:.9;letter-spacing:-.035em}.hero p{margin:0;color:rgba(255,255,255,.78);font-size:clamp(17px,1.45vw,24px);line-height:1.5}.hero-note{display:grid;gap:18px;border-top:1px solid rgba(255,255,255,.34);padding-top:18px}
       h2{margin:0;font-size:clamp(32px,4vw,60px);line-height:1.04;letter-spacing:-.014em;text-wrap:balance}h3{margin:0;font-size:clamp(20px,1.65vw,28px);line-height:1.16;letter-spacing:-.004em}p{font-size:clamp(15px,1.05vw,18px);line-height:1.62;text-wrap:pretty}.lead{max-width:720px;color:var(--muted)}
@@ -26,8 +26,9 @@
       .case-section{background:var(--warm)}.case-group{border-top:1px solid var(--line);max-width:1500px;margin:0 auto}.case-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);padding:6px 0 44px}.case-card{display:grid;grid-template-rows:auto 1fr;gap:12px;align-content:start}.case-card figure{aspect-ratio:1.46;border-radius:7px;background:var(--soft)}.case-copy{display:grid;grid-template-rows:auto minmax(2.3em,auto) auto auto;align-content:start}.case-card span{display:block;margin-bottom:8px;color:var(--muted);font:400 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase}.case-card p,.case-card li{color:var(--muted)}.case-card p{margin:10px 0 0}.case-card ul{padding-left:1.1em;font-size:14px;line-height:1.55}.card-detail{margin-top:12px;border-top:1px solid var(--line);border-bottom:0}.card-detail summary{display:flex;justify-content:space-between;gap:12px;padding:10px 0;color:var(--ink);font:700 12px "Poppins CSW";letter-spacing:.04em}.card-detail summary:after{font-size:16px}.card-detail[open] summary{background:transparent;padding-left:0}.card-detail summary:hover{background:transparent;padding-left:0}
       .brand-section{background:var(--black);color:var(--paper)}.brand-section .section-code,.brand-section p{color:rgba(255,255,255,.68)}.brand-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);max-width:1500px;margin:0 auto}.brand-index article{display:grid;gap:12px}.brand-index figure{aspect-ratio:1.46;border-radius:7px}.brand-index span{display:block;margin-bottom:8px;color:rgba(255,255,255,.56);font-size:12px}.brand-index p{margin:10px 0 0}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;max-width:1500px;margin:56px auto 0;background:rgba(255,255,255,.2)}.why-grid article{min-height:180px;padding:20px;background:rgba(255,255,255,.08)}
       .contact{color:var(--paper);background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.72)),url("assets/web/community-field.jpg") center/cover}.contact-panel{display:grid;gap:1px;margin-top:48px;background:rgba(255,255,255,.28)}.contact-panel a,.contact-panel span{display:flex;justify-content:space-between;gap:20px;padding:20px;background:rgba(0,0,0,.34);font-family:"Poppins CSW","OPPOSans CSW",sans-serif}.site-footer{display:grid;gap:clamp(42px,7vw,112px);padding:42px var(--pad) 28px;color:var(--paper);background:var(--black)}.footer-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.footer-wall figure{aspect-ratio:1;border-radius:4px}.footer-meta{display:grid;grid-template-columns:1fr minmax(240px,.35fr) minmax(220px,.24fr);gap:clamp(24px,5vw,80px);align-items:start}.footer-meta p{margin:0;color:rgba(255,255,255,.7);font-size:14px}.footer-links{display:grid;gap:8px;font-family:"Poppins CSW";font-size:12px;letter-spacing:.04em;text-transform:uppercase}.footer-logo img{height:auto;object-fit:contain}
+      @media(max-width:1180px){.topbar{grid-template-columns:190px 1fr}.language-switch{grid-column:1/-1;justify-self:end}}
       @media(max-width:980px){.topbar{grid-template-columns:190px 1fr}.nav-grid{grid-template-columns:repeat(3,1fr)}.nav-pill:nth-child(n+4){display:none}.hero-copy,.section-head,.feed-head,.fold-layout,.community-layout,.footer-meta{grid-template-columns:1fr}.feed-link{justify-self:start}.fold-intro{position:relative;top:auto}.role-grid,.brand-index,.case-list,.why-grid,.image-strip,.case-gallery,.atmosphere-grid{grid-template-columns:repeat(2,1fr)}.feed-grid{grid-template-columns:repeat(3,1fr)}.footer-wall{grid-template-columns:repeat(3,1fr)}.fold-body{padding-left:0}.image-strip figure:nth-child(n+4),.case-gallery figure:nth-child(n+4){display:block}}
-      @media(max-width:720px){.topbar{left:14px;right:14px;grid-template-columns:1fr}.brand-mark{width:182px}.nav-grid{display:none}section{padding:58px 18px}.metadata,.role-grid,.brand-index,.case-list,.why-grid,.image-strip,.case-gallery,.atmosphere-grid{grid-template-columns:1fr}.feed-grid{grid-template-columns:repeat(2,1fr);gap:18px 8px}.feed-card p{display:none}.hero{min-height:92svh}.hero h1{font-size:52px;line-height:.94}h2{font-size:32px;line-height:1.06}summary{grid-template-columns:1fr 28px;gap:8px;padding:18px 0}summary span{grid-column:1/-1}.community-layout figure{min-height:360px}.role-card figure,.case-card figure,.brand-index figure{aspect-ratio:1.32}.image-strip figure:nth-child(n+4),.case-gallery figure:nth-child(n+4){display:none}.footer-wall{grid-template-columns:repeat(2,1fr)}.footer-meta{gap:22px}.contact-panel a,.contact-panel span{display:grid}}
+      @media(max-width:720px){.topbar{left:14px;right:14px;grid-template-columns:1fr auto;gap:10px}.brand-mark{width:182px}.nav-grid{display:none}.language-switch{grid-column:auto;grid-template-columns:repeat(2,auto)}.language-switch button{min-height:30px;padding:0 7px;font-size:10px}section{padding:58px 18px}.metadata,.role-grid,.brand-index,.case-list,.why-grid,.image-strip,.case-gallery,.atmosphere-grid{grid-template-columns:1fr}.feed-grid{grid-template-columns:repeat(2,1fr);gap:18px 8px}.feed-card p{display:none}.hero{min-height:92svh}.hero h1{font-size:52px;line-height:.94}h2{font-size:32px;line-height:1.06}summary{grid-template-columns:1fr 28px;gap:8px;padding:18px 0}summary span{grid-column:1/-1}.community-layout figure{min-height:360px}.role-card figure,.case-card figure,.brand-index figure{aspect-ratio:1.32}.image-strip figure:nth-child(n+4),.case-gallery figure:nth-child(n+4){display:none}.footer-wall{grid-template-columns:repeat(2,1fr)}.footer-meta{gap:22px}.contact-panel a,.contact-panel span{display:grid}}
     </style>
   </head>
   <body>
@@ -41,6 +42,12 @@
         <a class="nav-pill" href="#cases">Cases</a>
         <a class="nav-pill" href="#contact">Connect</a>
       </nav>
+      <div class="language-switch" aria-label="Language switcher">
+        <button type="button" data-lang="zh">简体</button>
+        <button type="button" data-lang="zhHant">繁體</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">JP</button>
+      </div>
     </header>
     <main id="top">
       <section class="hero">
@@ -462,5 +469,477 @@
       </div>
       <figure class="footer-logo"><img src="assets/web/logo-white.png" alt="CAMPsomeWHERE" /></figure>
     </footer>
+    <script>
+(function () {
+  const langMeta = {
+    zh: { label: "简体", html: "zh-CN", title: "CAMPsomeWHERE" },
+    zhHant: { label: "繁體", html: "zh-Hant", title: "CAMPsomeWHERE" },
+    en: { label: "EN", html: "en", title: "CAMPsomeWHERE" },
+    ja: { label: "JP", html: "ja", title: "CAMPsomeWHERE" }
+  };
+
+  const zhHantMap = {
+    "简体": "簡體",
+    "官网第一眼，也应该看见 CSW 正在关注什么。": "官網第一眼，也應該看見 CSW 正在關注什麼。",
+    "来自 Instagram 的现场、活动、观察与行旅内容，作为进入 CSW 媒体平台的实时入口。": "來自 Instagram 的現場、活動、觀察與行旅內容，作為進入 CSW 媒體平台的即時入口。",
+    "内容驱动的": "內容驅動的",
+    "户外媒体与社群平台": "戶外媒體與社群平台",
+    "CAMPsomeWHERE 以内容建立理解，以社群建立信任，以真实场景完成体验，并让持续发生形成品牌记忆。": "CAMPsomeWHERE 以內容建立理解，以社群建立信任，以真實場景完成體驗，並讓持續發生形成品牌記憶。",
+    "现场更新": "現場更新",
+    "活动发布": "活動發布",
+    "户外观察": "戶外觀察",
+    "来自 CAMPsomeWHERE 社群、营地、城市与山野现场的即时内容。": "來自 CAMPsomeWHERE 社群、營地、城市與山野現場的即時內容。",
+    "把即将发生和正在发生的活动，转化为可被快速看见的媒体入口。": "把即將發生和正在發生的活動，轉化為可被快速看見的媒體入口。",
+    "持续记录装备、空间、人物、品牌与亚洲户外文化的日常变化。": "持續記錄裝備、空間、人物、品牌與亞洲戶外文化的日常變化。",
+    "展会、品牌与亚洲户外生活方式现场的持续观察。": "展會、品牌與亞洲戶外生活方式現場的持續觀察。",
+    "从城市到自然，把行旅现场转化为可持续传播的内容档案。": "從城市到自然，把行旅現場轉化為可持續傳播的內容檔案。",
+    "记录产品、器物、装备与日常户外生活方式之间的关系。": "記錄產品、器物、裝備與日常戶外生活方式之間的關係。",
+    "CAMPsomeWHERE 是一个围绕内容、社群与真实场景持续生长的户外生活方式平台。": "CAMPsomeWHERE 是一個圍繞內容、社群與真實場景持續生長的戶外生活方式平台。",
+    "我们通过内容建立理解，通过社群建立信任，通过真实场景完成体验，并让持续发生的项目成为可被记住的品牌记忆。": "我們透過內容建立理解，透過社群建立信任，透過真實場景完成體驗，並讓持續發生的項目成為可被記住的品牌記憶。",
+    "持续发布的户外媒体": "持續發布的戶外媒體",
+    "公众号、小红书、视频号与 Instagram 共同构成内容平台，从日更资讯到专题、试验场和行旅栏目持续沉淀。": "公眾號、小紅書、視頻號與 Instagram 共同構成內容平台，從日更資訊到專題、試驗場和行旅欄目持續沉澱。",
+    "真实参与的社群网络": "真實參與的社群網絡",
+    "大湾区为核心，连接户外爱好者、城市生活方式人群、创作者、品牌从业者与家庭亲子人群。": "大灣區為核心，連接戶外愛好者、城市生活方式人群、創作者、品牌從業者與家庭親子人群。",
+    "把真实场景转化为品牌内容": "把真實場景轉化為品牌內容",
+    "从内容企划、活动场景到空间策展，CSW 把社群参与和户外现场组织成可传播、可复用的品牌资产。": "從內容企劃、活動場景到空間策展，CSW 把社群參與和戶外現場組織成可傳播、可複用的品牌資產。",
+    "以高信任度社群网络，连接真实的户外生活方式场景。": "以高信任度社群網絡，連接真實的戶外生活方式場景。",
+    "CSW 社群由户外爱好者、城市生活方式人群、创作者与品牌从业者共同构成，是内容共创、活动参与、空间实践与长期协作的基础。": "CSW 社群由戶外愛好者、城市生活方式人群、創作者與品牌從業者共同構成，是內容共創、活動參與、空間實踐與長期協作的基礎。",
+    "大湾区户外与城市生活方式社群": "大灣區戶外與城市生活方式社群",
+    "户外与露营爱好者 / 城市生活方式人群 / 创作者 / 自由职业者 / 设计、媒体、品牌从业者 / 家庭与亲子人群": "戶外與露營愛好者 / 城市生活方式人群 / 創作者 / 自由職業者 / 設計、媒體、品牌從業者 / 家庭與親子人群",
+    "大湾区为主，辐射全国。26-45 岁为主，男女均衡。": "大灣區為主，輻射全國。26-45 歲為主，男女均衡。",
+    "真实使用场景中的高信任度触达 / 可持续的复购与口碑扩散 / 适合长期共创与产品验证的人群基础": "真實使用場景中的高信任度觸達 / 可持續的複購與口碑擴散 / 適合長期共創與產品驗證的人群基礎",
+    "以持续发布的内容，连接户外文化、城市生活与真实体验。": "以持續發布的內容，連接戶外文化、城市生活與真實體驗。",
+    "CSW 的内容体系覆盖日常资讯、深度专题、社群试验、工作坊与行旅共聚，从持续观察到现场参与，沉淀户外生活方式的内容资产。": "CSW 的內容體系覆蓋日常資訊、深度專題、社群試驗、工作坊與行旅共聚，從持續觀察到現場參與，沉澱戶外生活方式的內容資產。",
+    "营事编集室": "營事編集室",
+    "营事专题组": "營事專題組",
+    "营事试验场": "營事試驗場",
+    "营事实践所": "營事實踐所",
+    "营事俱乐部": "營事俱樂部",
+    "风格户外领域每日更新的标杆资讯栏目": "風格戶外領域每日更新的標杆資訊欄目",
+    "自 2025 年 9 月上线以来持续日更，覆盖品牌、装备、营地、店铺、活动与全球户外潮流文化动态。": "自 2025 年 9 月上線以來持續日更，覆蓋品牌、裝備、營地、店舖、活動與全球戶外潮流文化動態。",
+    "风格户外领域深度观察与长期专题企划栏目": "風格戶外領域深度觀察與長期專題企劃欄目",
+    "长期深入亚洲户外现场，通过专题报道、人物访谈与田野记录，构建属于这个时代的风格户外文化档案。": "長期深入亞洲戶外現場，透過專題報道、人物訪談與田野記錄，構建屬於這個時代的風格戶外文化檔案。",
+    "真实社群验证与产品共创栏目": "真實社群驗證與產品共創欄目",
+    "联合品牌、创作者与社群成员，通过真实场景体验、产品测试与内容共创，验证产品价值并沉淀真实反馈。": "聯合品牌、創作者與社群成員，透過真實場景體驗、產品測試與內容共創，驗證產品價值並沉澱真實反饋。",
+    "以兴趣为起点的体验共创栏目": "以興趣為起點的體驗共創欄目",
+    "通过露营、运动、摄影、手作等不同形式的主题活动，让参与者在共同体验中获得新的知识、技能与视角。": "透過露營、運動、攝影、手作等不同形式的主題活動，讓參與者在共同體驗中獲得新的知識、技能與視角。",
+    "长期发生的社群共聚与主题行旅栏目": "長期發生的社群共聚與主題行旅欄目",
+    "通过营聚、行旅与共同经历，连接拥有相似兴趣与价值观的人，形成持续发生的社群关系网络。": "透過營聚、行旅與共同經歷，連接擁有相似興趣與價值觀的人，形成持續發生的社群關係網絡。",
+    "从内容合作到场景共创，帮助品牌进入真实的户外生活方式语境。": "從內容合作到場景共創，幫助品牌進入真實的戶外生活方式語境。",
+    "所有合作，均基于品牌目标、阶段与资源条件进行定制组合。 品牌可从单次内容合作开始，逐步进入活动与空间协作，最终形成长期阶段协作。": "所有合作，均基於品牌目標、階段與資源條件進行定制組合。品牌可從單次內容合作開始，逐步進入活動與空間協作，最終形成長期階段協作。",
+    "内容制作与传播": "內容製作與傳播",
+    "品牌活动 x 社群共创": "品牌活動 x 社群共創",
+    "空间企划": "空間企劃",
+    "品牌阶段协作系统": "品牌階段協作系統",
+    "基于真实体验的内容制作与传播合作": "基於真實體驗的內容製作與傳播合作",
+    "每一个案例，都是内容、社群与场景共同完成的一次真实发生。": "每一個案例，都是內容、社群與場景共同完成的一次真實發生。",
+    "从内容栏目、品牌活动、空间策展到长期协作，CSW 将品牌目标转化为具体可参与、可传播、可沉淀的生活方式项目。": "從內容欄目、品牌活動、空間策展到長期協作，CSW 將品牌目標轉化為具體可參與、可傳播、可沉澱的生活方式項目。",
+    "围绕内容、空间与原创品牌，持续建立户外生活方式触点。": "圍繞內容、空間與原創品牌，持續建立戶外生活方式觸點。",
+    "与 CSW 一起，把品牌目标转化为真实发生的内容、社群与场景。": "與 CSW 一起，把品牌目標轉化為真實發生的內容、社群與場景。",
+    "以内容、社群与真实场景连接户外生活方式文化，持续记录正在发生的人、地方与品牌项目。": "以內容、社群與真實場景連接戶外生活方式文化，持續記錄正在發生的人、地方與品牌項目。"
+  };
+
+  const en = {
+    "简体": "ZH",
+    "繁體": "繁體",
+    "Feed": "Feed",
+    "Media": "Media",
+    "Community": "Community",
+    "Work": "Work",
+    "Cases": "Cases",
+    "Connect": "Connect",
+    "Contact": "Contact",
+    "Open Instagram": "Open Instagram",
+    "Community": "Community",
+    "Outdoor Media": "Outdoor Media",
+    "Creative": "Creative",
+    "内容驱动的": "Content-driven",
+    "户外媒体与社群平台": "Outdoor media and community platform",
+    "CAMPsomeWHERE 以内容建立理解，以社群建立信任，以真实场景完成体验，并让持续发生形成品牌记忆。": "CAMPsomeWHERE builds understanding through content, trust through community, and experience through real scenes, turning repeated moments into brand memory.",
+    "官网第一眼，也应该看见 CSW 正在关注什么。": "The first view should show what CSW is watching now.",
+    "来自 Instagram 的现场、活动、观察与行旅内容，作为进入 CSW 媒体平台的实时入口。": "Field scenes, events, observations and journeys from Instagram form a live entry into the CSW media platform.",
+    "现场更新": "Field Updates",
+    "活动发布": "Event Releases",
+    "户外观察": "Outdoor Notes",
+    "来自 CAMPsomeWHERE 社群、营地、城市与山野现场的即时内容。": "Live notes from the CAMPsomeWHERE community, campsites, cities and outdoor fields.",
+    "把即将发生和正在发生的活动，转化为可被快速看见的媒体入口。": "Turning upcoming and ongoing events into a fast, visible media entry.",
+    "持续记录装备、空间、人物、品牌与亚洲户外文化的日常变化。": "Ongoing records of gear, spaces, people, brands and the daily shifts of Asian outdoor culture.",
+    "展会、品牌与亚洲户外生活方式现场的持续观察。": "Ongoing observations from trade shows, brands and Asian outdoor lifestyle fields.",
+    "从城市到自然，把行旅现场转化为可持续传播的内容档案。": "From city to nature, turning travel fields into content archives that keep circulating.",
+    "记录产品、器物、装备与日常户外生活方式之间的关系。": "Recording the relationship between products, objects, gear and everyday outdoor living.",
+    "CAMPsomeWHERE 是一个围绕内容、社群与真实场景持续生长的户外生活方式平台。": "CAMPsomeWHERE is an outdoor lifestyle platform growing through content, community and real scenes.",
+    "我们通过内容建立理解，通过社群建立信任，通过真实场景完成体验，并让持续发生的项目成为可被记住的品牌记忆。": "We build understanding through content, trust through community, and experience through real scenes, so repeated projects become memorable brand assets.",
+    "持续发布的户外媒体": "Always-on outdoor media",
+    "公众号、小红书、视频号与 Instagram 共同构成内容平台，从日更资讯到专题、试验场和行旅栏目持续沉淀。": "WeChat, REDnote, video channels and Instagram form a media platform that accumulates daily updates, features, field labs and journey columns.",
+    "真实参与的社群网络": "A community that really participates",
+    "大湾区为核心，连接户外爱好者、城市生活方式人群、创作者、品牌从业者与家庭亲子人群。": "Rooted in the Greater Bay Area, connecting outdoor lovers, urban lifestyle audiences, creators, brand practitioners and families.",
+    "把真实场景转化为品牌内容": "Turning real scenes into brand content",
+    "从内容企划、活动场景到空间策展，CSW 把社群参与和户外现场组织成可传播、可复用的品牌资产。": "From content planning and events to space curation, CSW turns community participation and outdoor fields into reusable brand assets.",
+    "以高信任度社群网络，连接真实的户外生活方式场景。": "Connecting real outdoor lifestyle scenes through a high-trust community network.",
+    "CSW 社群由户外爱好者、城市生活方式人群、创作者与品牌从业者共同构成，是内容共创、活动参与、空间实践与长期协作的基础。": "The CSW community brings together outdoor lovers, urban lifestyle audiences, creators and brand practitioners, forming the base for content co-creation, events, space practice and long-term collaboration.",
+    "People": "People",
+    "Profile": "Profile",
+    "Value": "Value",
+    "大湾区户外与城市生活方式社群": "Greater Bay Area outdoor and urban lifestyle community",
+    "户外与露营爱好者 / 城市生活方式人群 / 创作者 / 自由职业者 / 设计、媒体、品牌从业者 / 家庭与亲子人群": "Outdoor and camping lovers / urban lifestyle audiences / creators / freelancers / design, media and brand practitioners / families",
+    "大湾区为主，辐射全国。26-45 岁为主，男女均衡。": "Based in the Greater Bay Area, reaching across China. Mainly ages 26-45, gender-balanced.",
+    "真实使用场景中的高信任度触达 / 可持续的复购与口碑扩散 / 适合长期共创与产品验证的人群基础": "High-trust reach in real use scenes / sustainable repeat purchase and word of mouth / a strong base for long-term co-creation and product validation",
+    "以持续发布的内容，连接户外文化、城市生活与真实体验。": "Connecting outdoor culture, urban life and real experience through continuous publishing.",
+    "CSW 的内容体系覆盖日常资讯、深度专题、社群试验、工作坊与行旅共聚，从持续观察到现场参与，沉淀户外生活方式的内容资产。": "CSW content covers daily updates, deep features, community experiments, workshops and journey gatherings, turning observation and participation into outdoor lifestyle assets.",
+    "营事编集室": "CSW Daily Pickup",
+    "营事专题组": "CSW Feature",
+    "营事试验场": "CSW Field Lab",
+    "营事实践所": "CSW Workshop",
+    "营事俱乐部": "CSW Club",
+    "风格户外领域每日更新的标杆资讯栏目": "A benchmark daily news column for style-driven outdoor culture",
+    "自 2025 年 9 月上线以来持续日更，覆盖品牌、装备、营地、店铺、活动与全球户外潮流文化动态。": "Updated daily since September 2025, covering brands, gear, campsites, shops, events and global outdoor culture.",
+    "风格户外领域深度观察与长期专题企划栏目": "Long-form features and deep observation for style-driven outdoor culture",
+    "长期深入亚洲户外现场，通过专题报道、人物访谈与田野记录，构建属于这个时代的风格户外文化档案。": "Long-term field reporting across Asian outdoor scenes through features, interviews and field notes.",
+    "真实社群验证与产品共创栏目": "A real-community validation and product co-creation column",
+    "联合品牌、创作者与社群成员，通过真实场景体验、产品测试与内容共创，验证产品价值并沉淀真实反馈。": "Working with brands, creators and community members to test products, co-create content and collect real feedback in real scenes.",
+    "以兴趣为起点的体验共创栏目": "Experience co-creation starting from shared interests",
+    "通过露营、运动、摄影、手作等不同形式的主题活动，让参与者在共同体验中获得新的知识、技能与视角。": "Themed activities across camping, sport, photography and craft, creating shared learning through experience.",
+    "长期发生的社群共聚与主题行旅栏目": "A long-running column for community gatherings and themed journeys",
+    "通过营聚、行旅与共同经历，连接拥有相似兴趣与价值观的人，形成持续发生的社群关系网络。": "Connecting people with shared interests and values through camps, journeys and repeated experiences.",
+    "从内容合作到场景共创，帮助品牌进入真实的户外生活方式语境。": "From content collaboration to scene co-creation, helping brands enter real outdoor lifestyle contexts.",
+    "所有合作，均基于品牌目标、阶段与资源条件进行定制组合。 品牌可从单次内容合作开始，逐步进入活动与空间协作，最终形成长期阶段协作。": "Every partnership is tailored to the brand's goals, stage and resources. Brands can start with a single content collaboration and gradually move into events, spaces and long-term phased collaboration.",
+    "内容制作与传播": "Content Production & Distribution",
+    "品牌活动 x 社群共创": "Brand Events x Community Co-creation",
+    "空间企划": "Space Curation",
+    "品牌阶段协作系统": "Phased Brand Collaboration",
+    "基于真实体验的内容制作与传播合作": "Content production and distribution rooted in real experience",
+    "内容主题与叙事角度策划": "Content theme and narrative angle planning",
+    "图文与视频内容成片": "Photo, article and video deliverables",
+    "筛选匹配的创作者 / 达人参与": "Creator and talent matching",
+    "CAMPsomeWHERE 自媒体传播发布": "Distribution through CAMPsomeWHERE owned media",
+    "从小规模深度私域，到 IP 级大型活动，以 CSW 社群为核心，构建真实体验与内容传播闭环。": "From intimate private experiences to IP-level events, CSW builds a loop of real experience and content distribution around its community.",
+    "品牌私域体验活动": "Private Brand Experience",
+    "品牌社群型活动": "Brand Community Event",
+    "IP 级活动": "IP-level Event",
+    "社群工作坊（轻量共创模块）": "Community Workshop",
+    "半日到 1 日、小规模、强体验 × 强情感连接": "Half-day to one-day, small scale, strong experience and emotional connection",
+    "2-3 日、中等规模、多体验模块并行": "Two to three days, medium scale, multiple experience modules",
+    "多日 & 多场景、200 人以上、多内容 & 多单位": "Multi-day, multi-scene, 200+ participants, multiple content units and partners",
+    "小规模、高信任度的社群共创形式，适用于品牌测试产品、深化关系、沉淀内容。": "A small-scale, high-trust co-creation format for product testing, deeper relationships and content accumulation.",
+    "体验型工作坊": "Experience Workshop",
+    "学习型工作坊": "Learning Workshop",
+    "探索型工作坊": "Exploration Workshop",
+    "强参与 × 强体验": "High participation x strong experience",
+    "系统化内容 × 深度交流": "Structured content x deep exchange",
+    "行动导向 × 多场景": "Action-oriented x multi-scene",
+    "活动主题与体验策划": "Event theme and experience planning",
+    "现场执行与流程管理": "On-site execution and flow management",
+    "基础体验单元与场景设计": "Basic experience units and scene design",
+    "基于真实体验的图文内容记录与分享": "Photo and text records based on real experience",
+    "用户筛选与社群组织（CSW 核心成员 / KOC）": "Participant selection and community organization",
+    "体验内容设计": "Experience content design",
+    "社群成员组织": "Community member organization",
+    "现场引导与执行": "On-site guidance and execution",
+    "图文记录": "Photo and text documentation",
+    "内容结构与课程设计": "Content structure and course design",
+    "社群协同与执行": "Community coordination and execution",
+    "图文内容整理": "Editorial content editing and documentation",
+    "路线与活动设计": "Route and activity design",
+    "内容记录与分享": "Content documentation and sharing",
+    "将户外生活方式转化为可参与、可传播的空间体验": "Turning outdoor lifestyle into spatial experiences people can join and share",
+    "空间策展（中小尺度）": "Small / Mid-scale Space Curation",
+    "空间策展（高复杂度）": "High-complexity Space Curation",
+    "快闪店 / 定制空间": "Pop-up / Custom Space",
+    "商业体阶段性主题事件 / 周末策展 / 短期内容": "Seasonal commercial themes / weekend curation / short-term content",
+    "大型商业空间 / 户外场地 / 多内容单元并行 / 高协同、高执行复杂度": "Large commercial spaces / outdoor venues / multiple content units / high coordination and execution complexity",
+    "品牌快闪店 / 文化合作空间 / 发布会置景": "Brand pop-ups / cultural collaboration spaces / launch scenography",
+    "从场景进入，到表达升级，再到产品边界拓展，面向希望建立品牌心智与方法论的长期整合型合作方式。": "A long-term integrated collaboration for brands that want to enter scenes, upgrade expression and expand product boundaries.",
+    "场景级长期共创": "Scene-level Long-term Co-creation",
+    "品牌成长协作": "Brand Growth Collaboration",
+    "产品 × 内容共创": "Product x Content Co-creation",
+    "通过体验载体与场景结构设计，让品牌在不同时间与空间中被反复使用、自然呈现，形成长期内容资产与使用记忆。": "Through experience carriers and scene structure, brands appear naturally across time and place, forming long-term content assets and usage memory.",
+    "解决品牌如何进入更广阔的市场与行业语境。": "Helping brands enter broader market and industry contexts.",
+    "解决品牌如何通过共创拓展产品边界。": "Helping brands expand product boundaries through co-creation.",
+    "每一个案例，都是内容、社群与场景共同完成的一次真实发生。": "Every case is a real occurrence completed by content, community and scene together.",
+    "从内容栏目、品牌活动、空间策展到长期协作，CSW 将品牌目标转化为具体可参与、可传播、可沉淀的生活方式项目。": "From media columns and brand events to space curation and long-term collaboration, CSW turns brand goals into lifestyle projects people can join, share and remember.",
+    "栏目合作": "Column Collaboration",
+    "定制内容": "Custom Content",
+    "3 Cases": "3 Cases",
+    "6 Cases": "6 Cases",
+    "PLAYLOGIC x CSW｜大湾区宠物露营地图": "PLAYLOGIC x CSW | Greater Bay Area Pet Camping Map",
+    "多单位联合支持｜CSW TOUR 日本风格户外行": "CSW TOUR | Japan-style Outdoor Journey",
+    "little MO&Co.｜CHINA TOUR": "little MO&Co. | CHINA TOUR",
+    "little MO&Co. VIP 活动": "little MO&Co. VIP Event",
+    "自由之魂｜魂友会": "The Free Spirits | Community Gathering",
+    "bambini 露营节 & 发布会": "bambini Camping Festival & Launch",
+    "蕉下社群活动《生刷 remake 工作坊》": "Beneunder Community Event | Remake Workshop",
+    "广州太古汇 VIP 活动《木作的时间》": "Taikoo Hui Guangzhou VIP Event | Time of Woodwork",
+    "BROMPTON《东山口骑行探索》": "BROMPTON | Dongshankou Ride",
+    "一方东山「黑白营」": "Yifang Dongshan | Black & White Camp",
+    "天地岭南露营节": "Lingnan Tiandi Camping Festival",
+    "CSW 定制空间实践": "CSW Custom Space Practices",
+    "湾野风流 × iCAR": "Campton Flow x iCAR",
+    "OIDE / FIELD STYLE 相关实践": "OIDE / FIELD STYLE Practices",
+    "以编辑策划沉淀可长期传播的实用型内容资产。": "An editorially planned, practical content asset designed for long-term circulation.",
+    "立体呈现日本风格户外的行旅内容企划。": "A multi-scene travel content project presenting Japanese-style outdoor culture.",
+    "以内容策划构建品牌价值观叙事结构。": "Building a brand-value narrative through content planning.",
+    "亲子共学 / 户外美学 / 自然手作 / 直火料理 / 山野探索 / 职人艺术": "Family learning / outdoor aesthetics / nature craft / open-fire cooking / field exploration / craft practice",
+    "户外美学 / 新品体验 / 品牌市集 / 兴趣社群 / 体验课程": "Outdoor aesthetics / product experience / brand market / interest communities / experience courses",
+    "户外美学 / 风格露营 / 品牌快闪 / 活动直播 / 自然手作 / 亲子游乐 / 大地音乐 / 职人艺术 / 直火料理 / 野趣探索": "Outdoor aesthetics / style camping / brand pop-up / live streaming / nature craft / family play / field music / craft practice / open-fire cooking / outdoor exploration",
+    "CSW @ 广州二丁里 / CSW 慢闪店 @ 上海龙华里 / 「湾野风流」特展 @ ampm / YAMA GUEST 发布会风格户外置景": "CSW @ Guangzhou Erdingli / CSW slow pop-up @ Shanghai Longhuali / Campton Flow special exhibition @ ampm / YAMA GUEST launch scenography",
+    "建立“湾野风流”组团，参与焚火大会、OIDE 等国内户外生活盛事；多次组织国内原创户外生活单位参与全亚洲最大户外嘉年华 FIELD STYLE。": "Organized the Campton Flow group to join major outdoor lifestyle events including Bonfire Festival and OIDE, and repeatedly brought original Chinese outdoor lifestyle units to FIELD STYLE, Asia's largest outdoor carnival.",
+    "联动艺术单位 BLACK THORN 与旅行收纳品牌 M SQUARE，持续推行创新的内容企划合作。": "Connecting art unit BLACK THORN with travel organization brand M SQUARE through ongoing content co-creation.",
+    "CASE NOTES": "CASE NOTES",
+    "《营事专题组》自有栏目承载": "Hosted by CSW Feature",
+    "《营事俱乐部》自有栏目承载": "Hosted by CSW Club",
+    "编辑策划主导内容结构": "Editorial planning led the content structure",
+    "联合创作与信息整合": "Co-creation and information integration",
+    "形成高保存、高转发内容": "Built content with high saves and shares",
+    "展会 × 在地 × 自然的多场景行旅": "Trade show x local culture x nature journey",
+    "M SQUARE、PAPERSKY、CIRCLES 等联合支持参与": "Supported by M SQUARE, PAPERSKY, CIRCLES and partners",
+    "CSW 为品牌定制的长期内容栏目": "A long-term custom content column for the brand",
+    "以亲子行旅为真实内容线索": "Family travel as the real content thread",
+    "结合每季产品主题与品牌价值输出": "Connecting seasonal product themes with brand values",
+    "从线路策划、内容制作到宣发传播一体化执行": "Integrated execution from route planning and content production to distribution",
+    "沉淀为品牌可持续使用的长期内容资产": "Accumulated into long-term reusable brand content assets",
+    "移动体验载体构建": "Mobile experience carrier design",
+    "多场景真实使用（营地 × 城市 × 行旅）": "Real use across campsites, cities and journeys",
+    "高频自然露出，持续参与多场活动 & 跨场景实践": "Frequent natural exposure through multiple events and scenes",
+    "多品牌生活方式共创": "Multi-brand lifestyle co-creation",
+    "围绕内容、空间与原创品牌，持续建立户外生活方式触点。": "Building outdoor lifestyle touchpoints through content, spaces and original brands.",
+    "广州": "Guangzhou",
+    "佛山": "Foshan",
+    "东平士多": "Dongping Store",
+    "金鱼社区": "Goldfish Community",
+    "豹之十二卷": "Haworthia Twelve",
+    "岙由 ULG": "ULG",
+    "湾野风流": "Campton Flow",
+    "社区空间 × 内容发生地": "Community space x content field",
+    "年轻生活方式社区": "Young lifestyle community",
+    "植物潮流生活品牌": "Plant lifestyle brand",
+    "女性轻户外生活品牌": "Women's light outdoor lifestyle brand",
+    "原创生活方式品牌联盟": "Original lifestyle brand alliance",
+    "想象力": "Imagination",
+    "内容力": "Content Power",
+    "执行力": "Execution",
+    "凝聚力": "Cohesion",
+    "内容结构与叙事能力": "Content structure and narrative ability",
+    "持续发生的真实内容": "Real content that keeps happening",
+    "复杂项目稳定落地": "Stable delivery of complex projects",
+    "高信任度社群网络": "High-trust community network",
+    "与 CSW 一起，把品牌目标转化为真实发生的内容、社群与场景。": "Work with CSW to turn brand goals into real content, community and scenes.",
+    "阶段一：内容合作 / 私域活动 / 阶段二：社群型活动 / 空间策展 / 阶段三：品牌阶段协作系统": "Stage 1: content collaboration / private events / Stage 2: community events / space curation / Stage 3: phased brand collaboration",
+    "Website": "Website",
+    "©2026 CAMPsomeWHERE": "©2026 CAMPsomeWHERE",
+    "Community / Outdoor Media / Creative": "Community / Outdoor Media / Creative",
+    "以内容、社群与真实场景连接户外生活方式文化，持续记录正在发生的人、地方与品牌项目。": "Connecting outdoor lifestyle culture through content, community and real scenes, continuously recording people, places and brand projects as they happen."
+  };
+
+  const ja = {
+    "简体": "簡体",
+    "Feed": "Feed",
+    "Media": "Media",
+    "Community": "Community",
+    "Work": "Work",
+    "Cases": "Cases",
+    "Connect": "Connect",
+    "Contact": "Contact",
+    "Open Instagram": "Instagram を開く",
+    "内容驱动的": "コンテンツが動かす",
+    "户外媒体与社群平台": "アウトドアメディアとコミュニティのプラットフォーム",
+    "CAMPsomeWHERE 以内容建立理解，以社群建立信任，以真实场景完成体验，并让持续发生形成品牌记忆。": "CAMPsomeWHERE は、コンテンツで理解をつくり、コミュニティで信頼をつくり、リアルな場で体験を完成させ、継続する出来事をブランドの記憶に変えていきます。",
+    "官网第一眼，也应该看见 CSW 正在关注什么。": "最初の画面で、CSW が今何を見ているかが伝わるべきです。",
+    "来自 Instagram 的现场、活动、观察与行旅内容，作为进入 CSW 媒体平台的实时入口。": "Instagram に届く現場、イベント、観察、旅の記録を、CSW メディアへのライブな入口にします。",
+    "现场更新": "現場更新",
+    "活动发布": "イベント告知",
+    "户外观察": "アウトドア観察",
+    "来自 CAMPsomeWHERE 社群、营地、城市与山野现场的即时内容。": "CAMPsomeWHERE のコミュニティ、キャンプ場、都市、山野から届くリアルタイムな記録。",
+    "把即将发生和正在发生的活动，转化为可被快速看见的媒体入口。": "これから起こること、今起きていることを、すぐに見えるメディア入口へ。",
+    "持续记录装备、空间、人物、品牌与亚洲户外文化的日常变化。": "ギア、空間、人、ブランド、アジアのアウトドア文化の日々の変化を記録します。",
+    "展会、品牌与亚洲户外生活方式现场的持续观察。": "展示会、ブランド、アジアのアウトドア・ライフスタイル現場からの継続的な観察。",
+    "从城市到自然，把行旅现场转化为可持续传播的内容档案。": "都市から自然へ、旅の現場を継続的に伝わるコンテンツアーカイブへ。",
+    "记录产品、器物、装备与日常户外生活方式之间的关系。": "プロダクト、道具、ギア、日常のアウトドアライフの関係を記録します。",
+    "CAMPsomeWHERE 是一个围绕内容、社群与真实场景持续生长的户外生活方式平台。": "CAMPsomeWHERE は、コンテンツ、コミュニティ、リアルな場を中心に成長し続けるアウトドア・ライフスタイル・プラットフォームです。",
+    "我们通过内容建立理解，通过社群建立信任，通过真实场景完成体验，并让持续发生的项目成为可被记住的品牌记忆。": "私たちはコンテンツで理解を、コミュニティで信頼を、リアルな場で体験をつくり、継続するプロジェクトを記憶されるブランド資産にします。",
+    "持续发布的户外媒体": "更新し続けるアウトドアメディア",
+    "公众号、小红书、视频号与 Instagram 共同构成内容平台，从日更资讯到专题、试验场和行旅栏目持续沉淀。": "WeChat、REDnote、動画チャンネル、Instagram が、日々のニュース、特集、Field Lab、旅の連載を蓄積するメディアプラットフォームを構成します。",
+    "真实参与的社群网络": "実際に参加するコミュニティ",
+    "大湾区为核心，连接户外爱好者、城市生活方式人群、创作者、品牌从业者与家庭亲子人群。": "大湾区を起点に、アウトドア愛好家、都市型ライフスタイル層、クリエイター、ブランド関係者、ファミリー層をつなぎます。",
+    "把真实场景转化为品牌内容": "リアルな場をブランドコンテンツへ",
+    "从内容企划、活动场景到空间策展，CSW 把社群参与和户外现场组织成可传播、可复用的品牌资产。": "コンテンツ企画、イベント、空間キュレーションを通じて、CSW はコミュニティ参加とアウトドア現場を伝播可能なブランド資産に変えます。",
+    "以高信任度社群网络，连接真实的户外生活方式场景。": "高い信頼を持つコミュニティネットワークで、リアルなアウトドア・ライフスタイルの場をつなぎます。",
+    "CSW 社群由户外爱好者、城市生活方式人群、创作者与品牌从业者共同构成，是内容共创、活动参与、空间实践与长期协作的基础。": "CSW のコミュニティは、アウトドア愛好家、都市生活者、クリエイター、ブランド関係者によって構成され、コンテンツ共創、イベント参加、空間実践、長期協業の土台です。",
+    "大湾区户外与城市生活方式社群": "大湾区のアウトドアと都市型ライフスタイル・コミュニティ",
+    "户外与露营爱好者 / 城市生活方式人群 / 创作者 / 自由职业者 / 设计、媒体、品牌从业者 / 家庭与亲子人群": "アウトドア・キャンプ愛好家 / 都市型ライフスタイル層 / クリエイター / フリーランス / デザイン、メディア、ブランド関係者 / ファミリー層",
+    "大湾区为主，辐射全国。26-45 岁为主，男女均衡。": "大湾区を中心に中国各地へ。主に 26-45 歳、男女バランスの取れた層。",
+    "真实使用场景中的高信任度触达 / 可持续的复购与口碑扩散 / 适合长期共创与产品验证的人群基础": "リアルな使用シーンでの高信頼接触 / 継続的な再購入と口コミ / 長期共創と製品検証に向いた参加者基盤",
+    "以持续发布的内容，连接户外文化、城市生活与真实体验。": "継続的な発信で、アウトドア文化、都市生活、リアルな体験をつなぎます。",
+    "CSW 的内容体系覆盖日常资讯、深度专题、社群试验、工作坊与行旅共聚，从持续观察到现场参与，沉淀户外生活方式的内容资产。": "CSW のコンテンツ体系は、日々の更新、深い特集、コミュニティ実験、ワークショップ、旅と集いを含み、観察と参加をアウトドア・ライフスタイルの資産にします。",
+    "营事编集室": "CSW Daily Pickup",
+    "营事专题组": "CSW Feature",
+    "营事试验场": "CSW Field Lab",
+    "营事实践所": "CSW Workshop",
+    "营事俱乐部": "CSW Club",
+    "风格户外领域每日更新的标杆资讯栏目": "スタイル志向のアウトドア領域における毎日更新のニュースコラム",
+    "自 2025 年 9 月上线以来持续日更，覆盖品牌、装备、营地、店铺、活动与全球户外潮流文化动态。": "2025 年 9 月の公開以来、ブランド、ギア、キャンプ場、ショップ、イベント、世界のアウトドア文化を毎日更新。",
+    "风格户外领域深度观察与长期专题企划栏目": "スタイル志向のアウトドア文化を深く観察する長期特集コラム",
+    "长期深入亚洲户外现场，通过专题报道、人物访谈与田野记录，构建属于这个时代的风格户外文化档案。": "アジアのアウトドア現場に入り、特集、インタビュー、フィールドノートを通じて文化アーカイブをつくります。",
+    "真实社群验证与产品共创栏目": "リアルコミュニティによる検証と製品共創のコラム",
+    "联合品牌、创作者与社群成员，通过真实场景体验、产品测试与内容共创，验证产品价值并沉淀真实反馈。": "ブランド、クリエイター、コミュニティと共に、リアルな場で製品を試し、内容を共創し、フィードバックを蓄積します。",
+    "以兴趣为起点的体验共创栏目": "興味を起点にした体験共創コラム",
+    "通过露营、运动、摄影、手作等不同形式的主题活动，让参与者在共同体验中获得新的知识、技能与视角。": "キャンプ、スポーツ、写真、クラフトなどの体験を通じて、新しい知識、技術、視点を共有します。",
+    "长期发生的社群共聚与主题行旅栏目": "継続的なコミュニティの集いとテーマ旅のコラム",
+    "通过营聚、行旅与共同经历，连接拥有相似兴趣与价值观的人，形成持续发生的社群关系网络。": "キャンプ、旅、共通体験を通じて、似た興味と価値観を持つ人々をつなぎます。",
+    "从内容合作到场景共创，帮助品牌进入真实的户外生活方式语境。": "コンテンツ協業から場の共創まで、ブランドがリアルなアウトドア・ライフスタイル文脈に入ることを支援します。",
+    "所有合作，均基于品牌目标、阶段与资源条件进行定制组合。 品牌可从单次内容合作开始，逐步进入活动与空间协作，最终形成长期阶段协作。": "すべての協業は、ブランドの目標、段階、リソースに合わせて設計されます。単発のコンテンツ協業から始まり、イベント、空間、長期的な段階協業へ進むことができます。",
+    "内容制作与传播": "Content Production & Distribution",
+    "品牌活动 x 社群共创": "Brand Events x Community Co-creation",
+    "空间企划": "Space Curation",
+    "品牌阶段协作系统": "Phased Brand Collaboration",
+    "基于真实体验的内容制作与传播合作": "リアルな体験に基づくコンテンツ制作と発信",
+    "从小规模深度私域，到 IP 级大型活动，以 CSW 社群为核心，构建真实体验与内容传播闭环。": "小規模で深い体験から IP レベルの大型イベントまで、CSW コミュニティを中心に体験と発信の循環をつくります。",
+    "品牌私域体验活动": "Private Brand Experience",
+    "品牌社群型活动": "Brand Community Event",
+    "IP 级活动": "IP-level Event",
+    "社群工作坊（轻量共创模块）": "Community Workshop",
+    "空间策展（中小尺度）": "Small / Mid-scale Space Curation",
+    "空间策展（高复杂度）": "High-complexity Space Curation",
+    "快闪店 / 定制空间": "Pop-up / Custom Space",
+    "场景级长期共创": "Scene-level Long-term Co-creation",
+    "品牌成长协作": "Brand Growth Collaboration",
+    "产品 × 内容共创": "Product x Content Co-creation",
+    "每一个案例，都是内容、社群与场景共同完成的一次真实发生。": "すべての事例は、コンテンツ、コミュニティ、場が一緒につくったリアルな出来事です。",
+    "从内容栏目、品牌活动、空间策展到长期协作，CSW 将品牌目标转化为具体可参与、可传播、可沉淀的生活方式项目。": "メディア連載、ブランドイベント、空間企画、長期協業を通じて、CSW はブランド目標を参加でき、共有され、蓄積されるライフスタイルプロジェクトへ変えます。",
+    "栏目合作": "Column Collaboration",
+    "定制内容": "Custom Content",
+    "PLAYLOGIC x CSW｜大湾区宠物露营地图": "PLAYLOGIC x CSW | 大湾区ペットキャンプマップ",
+    "多单位联合支持｜CSW TOUR 日本风格户外行": "CSW TOUR | 日本スタイルのアウトドア旅",
+    "little MO&Co.｜CHINA TOUR": "little MO&Co. | CHINA TOUR",
+    "little MO&Co. VIP 活动": "little MO&Co. VIP イベント",
+    "自由之魂｜魂友会": "The Free Spirits | コミュニティギャザリング",
+    "bambini 露营节 & 发布会": "bambini キャンプフェス & ローンチ",
+    "蕉下社群活动《生刷 remake 工作坊》": "Beneunder コミュニティイベント | Remake Workshop",
+    "广州太古汇 VIP 活动《木作的时间》": "Taikoo Hui Guangzhou VIP Event | 木工の時間",
+    "BROMPTON《东山口骑行探索》": "BROMPTON | 東山口ライド探索",
+    "一方东山「黑白营」": "Yifang Dongshan | Black & White Camp",
+    "天地岭南露营节": "Lingnan Tiandi Camping Festival",
+    "CSW 定制空间实践": "CSW カスタムスペース実践",
+    "湾野风流 × iCAR": "Campton Flow x iCAR",
+    "以编辑策划沉淀可长期传播的实用型内容资产。": "編集企画によって、長期的に流通する実用型コンテンツ資産をつくりました。",
+    "立体呈现日本风格户外的行旅内容企划。": "日本スタイルのアウトドアを多層的に見せる旅のコンテンツ企画。",
+    "以内容策划构建品牌价值观叙事结构。": "コンテンツ企画でブランド価値の物語構造をつくります。",
+    "围绕内容、空间与原创品牌，持续建立户外生活方式触点。": "コンテンツ、空間、オリジナルブランドを通じて、アウトドア・ライフスタイルの接点を継続的につくります。",
+    "想象力": "Imagination",
+    "内容力": "Content Power",
+    "执行力": "Execution",
+    "凝聚力": "Cohesion",
+    "与 CSW 一起，把品牌目标转化为真实发生的内容、社群与场景。": "CSW と共に、ブランド目標をリアルに起こるコンテンツ、コミュニティ、場へ変えていきます。",
+    "以内容、社群与真实场景连接户外生活方式文化，持续记录正在发生的人、地方与品牌项目。": "コンテンツ、コミュニティ、リアルな場を通じてアウトドア・ライフスタイル文化をつなぎ、今起きている人、場所、ブランドプロジェクトを記録し続けます。"
+  };
+
+  const genericJa = {
+    "内容主题与叙事角度策划": "コンテンツテーマと物語角度の企画",
+    "图文与视频内容成片": "写真・記事・動画制作",
+    "筛选匹配的创作者 / 达人参与": "クリエイター / タレントのマッチング",
+    "CAMPsomeWHERE 自媒体传播发布": "CAMPsomeWHERE 自社メディア発信",
+    "活动主题与体验策划": "イベントテーマと体験企画",
+    "现场执行与流程管理": "現場運営と進行管理",
+    "基础体验单元与场景设计": "体験ユニットと場の設計",
+    "基于真实体验的图文内容记录与分享": "リアル体験に基づく記録と共有",
+    "用户筛选与社群组织（CSW 核心成员 / KOC）": "参加者選定とコミュニティ組織",
+    "体验内容设计": "体験内容設計",
+    "社群成员组织": "コミュニティ組織",
+    "现场引导与执行": "現場ガイドと実行",
+    "图文记录": "写真と文章の記録",
+    "内容结构与课程设计": "内容構成と講座設計",
+    "社群协同与执行": "コミュニティ連携と実行",
+    "图文内容整理": "編集整理",
+    "路线与活动设计": "ルートと活動設計",
+    "内容记录与分享": "記録と共有",
+    "半日到 1 日、小规模、强体验 × 强情感连接": "半日から 1 日、小規模、強い体験と感情的なつながり",
+    "2-3 日、中等规模、多体验模块并行": "2-3 日、中規模、複数の体験モジュール",
+    "多日 & 多场景、200 人以上、多内容 & 多单位": "複数日・複数シーン・200 人以上・複数コンテンツとパートナー",
+    "小规模、高信任度的社群共创形式，适用于品牌测试产品、深化关系、沉淀内容。": "製品検証、関係深化、コンテンツ蓄積に向いた小規模で高信頼の共創形式。",
+    "商业体阶段性主题事件 / 周末策展 / 短期内容": "商業施設のテーマイベント / 週末キュレーション / 短期コンテンツ",
+    "大型商业空间 / 户外场地 / 多内容单元并行 / 高协同、高执行复杂度": "大型商業空間 / 屋外会場 / 複数コンテンツ / 高い協調と実行複雑度",
+    "品牌快闪店 / 文化合作空间 / 发布会置景": "ブランドポップアップ / 文化協業空間 / ローンチ演出",
+    "从场景进入，到表达升级，再到产品边界拓展，面向希望建立品牌心智与方法论的长期整合型合作方式。": "場への参加、表現の更新、製品境界の拡張までを支える長期統合型の協業。",
+    "通过体验载体与场景结构设计，让品牌在不同时间与空间中被反复使用、自然呈现，形成长期内容资产与使用记忆。": "体験媒体と場の構造によって、ブランドが異なる時間と場所で自然に使われ、長期的な記憶を形成します。",
+    "解决品牌如何进入更广阔的市场与行业语境。": "ブランドがより広い市場と業界文脈に入る方法を支援します。",
+    "解决品牌如何通过共创拓展产品边界。": "共創によって製品の境界を広げる方法を支援します。",
+    "CASE NOTES": "CASE NOTES"
+  };
+
+  Object.assign(ja, genericJa);
+
+  function toTraditional(text) {
+    if (zhHantMap[text]) return zhHantMap[text];
+    const map = {
+      "个": "個", "为": "為", "户": "戶", "动": "動", "会": "會", "传": "傳", "体": "體", "们": "們",
+      "内": "內", "来": "來", "开": "開", "网": "網", "络": "絡", "创": "創", "项": "項", "执": "執",
+      "实": "實", "场": "場", "间": "間", "连": "連", "续": "續", "发": "發", "长": "長", "产": "產",
+      "业": "業", "广": "廣", "与": "與", "参": "參", "计": "計", "划": "劃", "导": "導", "览": "覽",
+      "级": "級", "规": "規", "视": "視", "频": "頻", "号": "號", "栏": "欄", "组": "組", "试": "試",
+      "验": "驗", "联": "聯", "员": "員", "习": "習", "营": "營", "龄": "齡", "构": "構", "观": "觀",
+      "审": "審", "湾": "灣", "区": "區", "宠": "寵", "辑": "輯", "题": "題", "亲": "親", "线": "線",
+      "结": "結", "协": "協", "阶": "階", "统": "統", "单": "單", "扩": "擴", "对": "對", "触": "觸",
+      "购": "購", "现": "現", "议": "議", "后": "後", "记": "記", "录": "錄", "别": "別", "则": "則",
+      "应": "應", "历": "歷", "变": "變", "层": "層", "类": "類", "数": "數", "据": "據", "择": "擇",
+      "国": "國", "认": "認", "写": "寫", "图": "圖", "码": "碼", "东": "東", "过": "過", "这": "這",
+      "递": "遞", "轻": "輕", "处": "處", "师": "師", "节": "節", "资": "資", "汇": "匯", "馆": "館"
+    };
+    return text.replace(/[个为户动会传体们内来开网络创项执实场间连续发长产业广与参计划导览级规视频号栏组试验联员习营龄构观审湾区宠辑题亲线结协阶统单扩对触购现议后记录别则应历变层类数据择国认写图码东过这递轻处师节资汇馆]/g, (char) => map[char] || char);
+  }
+
+  const dictionaries = { zhHant, en, ja };
+  const skipTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA"]);
+
+  function translateText(text, lang) {
+    if (lang === "zh") return text;
+    if (lang === "zhHant") return toTraditional(text);
+    return dictionaries[lang][text] || text;
+  }
+
+  function walkTextNodes(root, callback) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || skipTags.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(callback);
+  }
+
+  function applyLanguage(lang) {
+    const meta = langMeta[lang] || langMeta.zh;
+    document.documentElement.lang = meta.html;
+    document.title = meta.title;
+    walkTextNodes(document.body, (node) => {
+      if (!node.__cswOriginalText) node.__cswOriginalText = node.nodeValue;
+      const original = node.__cswOriginalText;
+      const trimmed = original.trim();
+      const translated = translateText(trimmed, lang);
+      node.nodeValue = original.replace(trimmed, translated);
+    });
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      const active = button.dataset.lang === lang;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+      button.textContent = langMeta[button.dataset.lang]?.label || button.textContent;
+    });
+    window.localStorage.setItem("csw-lang", lang);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const saved = window.localStorage.getItem("csw-lang") || "zh";
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+    applyLanguage(langMeta[saved] ? saved : "zh");
+  });
+
+  window.CSW_I18N = { langMeta, dictionaries, applyLanguage };
+})();
+
+    </script>
   </body>
 </html>
