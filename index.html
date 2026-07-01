@@ -886,7 +886,7 @@
     return text.replace(/[个为户动会传体们内来开网络创项执实场间连续发长产业广与参计划导览级规视频号栏组试验联员习营龄构观审湾区宠辑题亲线结协阶统单扩对触购现议后记录别则应历变层类数据择国认写图码东过这递轻处师节资汇馆]/g, (char) => map[char] || char);
   }
 
-  const dictionaries = { zhHant, en, ja };
+  const dictionaries = { zhHant: zhHantMap, en, ja };
   const skipTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA"]);
 
   function translateText(text, lang) {
