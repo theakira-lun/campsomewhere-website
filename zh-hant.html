@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-Hant" class="lang-zhHant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAMPsomeWHERE</title>
+    <style>
+      @font-face{font-family:"Poppins CSW";src:url("brand/working/source-analysis/fonts/Poppins-Regular.ttf") format("truetype");font-weight:400}
+      @font-face{font-family:"Poppins CSW";src:url("brand/working/source-analysis/fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:700}
+      @font-face{font-family:"OPPOSans CSW";src:url("brand/working/source-analysis/fonts/OPPOSans-R.ttf") format("truetype");font-weight:400}
+      @font-face{font-family:"OPPOSans CSW";src:url("brand/working/source-analysis/fonts/OPPOSans-B.ttf") format("truetype");font-weight:700}
+      :root{--ink:#231815;--black:#080808;--paper:#fff;--soft:#f1f1ef;--warm:#f7f4ea;--line:rgba(35,24,21,.18);--muted:rgba(35,24,21,.62);--pad:clamp(18px,3.8vw,72px);font-family:"OPPOSans CSW","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}
+      *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px}img{display:block;width:100%;height:100%;object-fit:cover}a{color:inherit;text-decoration:none}figure{margin:0;overflow:hidden}
+      .topbar{position:fixed;top:14px;left:var(--pad);right:var(--pad);z-index:20;display:grid;grid-template-columns:clamp(172px,18vw,236px) 1fr auto;gap:20px;align-items:start}.brand-mark{display:block;padding:8px 12px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);backdrop-filter:blur(14px)}.brand-mark img{height:auto;object-fit:contain}.nav-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}.nav-pill{min-height:38px;padding:11px 14px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);font:700 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(14px)}.language-links{display:grid;grid-template-columns:repeat(4,auto);gap:2px}.lang-link{min-height:38px;display:grid;place-items:center;padding:0 10px;border:1px solid rgba(255,255,255,.34);border-radius:7px;background:rgba(255,255,255,.56);font:700 11px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(14px)}.lang-link.active{background:var(--black);color:var(--paper);border-color:var(--black)}
+      .mono,.eyebrow,.metadata,.section-code,summary span,.case-row span,.brand-index span,.big-link span,.tag{font-family:"Poppins CSW",monospace;letter-spacing:.04em;text-transform:uppercase}
+      section{position:relative;padding:clamp(70px,7vw,118px) var(--pad);overflow:hidden}.hero{min-height:100svh;display:grid;align-content:end;color:var(--paper);background:var(--black)}.hero figure{position:absolute;inset:0}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.78)),linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.04) 54%,rgba(0,0,0,.44))}.hero-copy{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.36fr);gap:clamp(28px,5vw,84px);align-items:end}.metadata{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:46px;font-size:12px}.hero h1{max-width:900px;margin:0;font-size:clamp(48px,5.35vw,86px);line-height:.94;letter-spacing:-.028em}.hero p{margin:0;color:rgba(255,255,255,.78);font-size:clamp(16px,1.18vw,20px);line-height:1.48}.hero-note{display:grid;gap:18px;border-top:1px solid rgba(255,255,255,.34);padding-top:18px}
+      h2{margin:0;font-size:clamp(30px,3.15vw,48px);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}.lang-en h2,.lang-ja h2{font-size:clamp(28px,2.85vw,42px);line-height:1.12}.lang-en .hero h1,.lang-ja .hero h1{max-width:880px;font-size:clamp(40px,4.65vw,72px);line-height:1.02;letter-spacing:-.018em}h3{margin:0;font-size:clamp(19px,1.38vw,24px);line-height:1.18;letter-spacing:-.002em}p{font-size:clamp(14px,.95vw,16.5px);line-height:1.62;text-wrap:pretty}.lead{max-width:700px;color:var(--muted)}
+      .section-head{display:grid;grid-template-columns:minmax(150px,.22fr) minmax(0,820px);gap:clamp(24px,4.8vw,76px);align-items:start;margin:0 auto clamp(34px,5vw,64px);max-width:1480px}.section-code{color:var(--muted);font-size:12px;line-height:1.5}
+      .feed-section{background:var(--paper)}.feed-head{display:grid;grid-template-columns:minmax(150px,.22fr) minmax(0,760px) auto;gap:clamp(24px,4vw,70px);align-items:end;max-width:1500px;margin:0 auto clamp(34px,5vw,64px)}.feed-link{justify-self:end;border-bottom:1px solid currentColor;font:700 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase}.feed-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;max-width:1500px;margin:0 auto}.feed-card{display:grid;grid-template-rows:auto 1fr;gap:12px}.feed-card figure{aspect-ratio:1;border-radius:7px;background:var(--soft)}.feed-card div{display:grid;gap:8px}.feed-card span{font:700 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}.feed-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+      .role-section{background:var(--paper)}.role-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);max-width:1500px;margin:0 auto}.role-card{background:var(--paper);display:grid;align-content:start;gap:14px}.role-card figure{aspect-ratio:1.46;border-radius:7px}.role-card div{padding:0}.role-card p{margin:12px 0 0;color:var(--muted)}.tag{display:block;margin-bottom:8px;color:var(--muted);font-size:12px}
+      .community-core{background:var(--soft)}.community-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.42fr);gap:clamp(24px,4vw,64px);align-items:stretch;max-width:1500px;margin:0 auto}.community-layout figure{min-height:560px;border-radius:7px}.fact-strip{display:grid;border-top:1px solid var(--line);align-self:end}.fact-strip article{padding:20px 0;border-bottom:1px solid var(--line)}.fact-strip p{color:var(--muted)}
+      .fold-section{background:var(--paper)}.fold-layout{display:grid;grid-template-columns:minmax(240px,.34fr) minmax(0,1fr);gap:clamp(28px,4.4vw,72px);align-items:start;max-width:1500px;margin:0 auto}.fold-intro{position:sticky;top:90px}.fold-stack{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:126px minmax(0,1fr) 30px;gap:18px;align-items:center;padding:20px 0;transition:color .2s ease,background .2s ease,padding-left .2s ease}summary::-webkit-details-marker{display:none}summary:after{content:"+";justify-self:end;font:400 22px "Poppins CSW"}details[open]>summary:after{content:"-"}summary span{color:var(--muted);font-size:12px}summary strong{font-size:clamp(20px,1.75vw,29px);line-height:1.12}details[open]>summary,summary:hover{color:var(--ink);padding-left:10px;background:rgba(35,24,21,.035)}.fold-body{padding:0 0 26px 144px;color:var(--muted)}.fold-body p{max-width:740px}.fold-body ul,.nested-folds ul{font-size:15px;line-height:1.62}.chip-list{display:flex;flex-wrap:wrap;gap:8px}.chip-list span,.case-chip{display:inline-flex;padding:8px 10px;border:1px solid currentColor;border-radius:999px;font:700 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+      .nested-folds{margin-top:20px;border-top:1px solid var(--line);color:var(--ink)}.nested-folds details{background:var(--soft);padding:0 18px}.nested-folds summary{grid-template-columns:1fr 26px;padding:16px 0}.nested-folds summary:after{font-size:22px}.nested-folds p{font-size:15px;color:var(--muted)}.mini-note{padding:16px 0;border-top:1px solid var(--line)}.case-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+      .media-section{color:var(--paper);background:var(--black)}.media-section .section-code,.media-section .lead{color:rgba(255,255,255,.68)}.media-section .fold-stack{border-color:rgba(255,255,255,.24)}.media-section details{border-color:rgba(255,255,255,.24)}.media-section summary span,.media-section .fold-body{color:rgba(255,255,255,.68)}.media-section details[open]>summary,.media-section summary:hover{color:var(--paper);background:rgba(255,255,255,.07)}.media-section .case-chip{color:var(--paper)}
+      .image-strip,.atmosphere-grid,.case-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);max-width:1500px;margin:clamp(34px,5vw,70px) auto 0;background:transparent}.image-strip figure,.atmosphere-grid figure,.case-gallery figure{aspect-ratio:1.48;min-height:0;border-radius:7px}.image-strip figure:nth-child(n+4){display:none}.atmosphere-grid figure:first-child,.case-gallery figure:first-child{grid-row:auto;grid-column:auto}.case-gallery figure:nth-child(n+4){display:none}
+      .case-section{background:var(--warm)}.case-group{border-top:1px solid var(--line);max-width:1500px;margin:0 auto}.case-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);padding:6px 0 44px}.case-card{display:grid;grid-template-rows:auto 1fr;gap:12px;align-content:start}.case-card figure{aspect-ratio:1.46;border-radius:7px;background:var(--soft)}.case-copy{display:grid;grid-template-rows:auto minmax(2.3em,auto) auto auto;align-content:start}.case-card span{display:block;margin-bottom:8px;color:var(--muted);font:400 12px "Poppins CSW";letter-spacing:.04em;text-transform:uppercase}.case-card p,.case-card li{color:var(--muted)}.case-card p{margin:10px 0 0}.case-card ul{padding-left:1.1em;font-size:14px;line-height:1.55}.card-detail{margin-top:12px;border-top:1px solid var(--line);border-bottom:0}.card-detail summary{display:flex;justify-content:space-between;gap:12px;padding:10px 0;color:var(--ink);font:700 12px "Poppins CSW";letter-spacing:.04em}.card-detail summary:after{font-size:16px}.card-detail[open] summary{background:transparent;padding-left:0}.card-detail summary:hover{background:transparent;padding-left:0}
+      .brand-section{background:var(--black);color:var(--paper)}.brand-section .section-code,.brand-section p{color:rgba(255,255,255,.68)}.brand-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px);max-width:1500px;margin:0 auto}.brand-index article{display:grid;gap:12px}.brand-index figure{aspect-ratio:1.46;border-radius:7px}.brand-index span{display:block;margin-bottom:8px;color:rgba(255,255,255,.56);font-size:12px}.brand-index p{margin:10px 0 0}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;max-width:1500px;margin:56px auto 0;background:rgba(255,255,255,.2)}.why-grid article{min-height:180px;padding:20px;background:rgba(255,255,255,.08)}
+      .contact{color:var(--paper);background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.72)),url("assets/web/community-field.jpg") center/cover}.contact-panel{display:grid;gap:1px;margin-top:48px;background:rgba(255,255,255,.28)}.contact-panel a,.contact-panel span{display:flex;justify-content:space-between;gap:20px;padding:20px;background:rgba(0,0,0,.34);font-family:"Poppins CSW","OPPOSans CSW",sans-serif}.site-footer{display:grid;gap:clamp(42px,7vw,112px);padding:42px var(--pad) 28px;color:var(--paper);background:var(--black)}.footer-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.footer-wall figure{aspect-ratio:1;border-radius:4px}.footer-meta{display:grid;grid-template-columns:1fr minmax(240px,.35fr) minmax(220px,.24fr);gap:clamp(24px,5vw,80px);align-items:start}.footer-meta p{margin:0;color:rgba(255,255,255,.7);font-size:14px}.footer-links{display:grid;gap:8px;font-family:"Poppins CSW";font-size:12px;letter-spacing:.04em;text-transform:uppercase}.footer-logo img{height:auto;object-fit:contain}
+      @media(max-width:980px){.topbar{grid-template-columns:190px 1fr}.language-links{grid-column:1/-1;justify-self:end}.nav-grid{grid-template-columns:repeat(3,1fr)}.nav-pill:nth-child(n+4){display:none}.hero-copy,.section-head,.feed-head,.fold-layout,.community-layout,.footer-meta{grid-template-columns:1fr}.feed-link{justify-self:start}.fold-intro{position:relative;top:auto}.role-grid,.brand-index,.case-list,.why-grid,.image-strip,.case-gallery,.atmosphere-grid{grid-template-columns:repeat(2,1fr)}.feed-grid{grid-template-columns:repeat(3,1fr)}.footer-wall{grid-template-columns:repeat(3,1fr)}.fold-body{padding-left:0}.image-strip figure:nth-child(n+4),.case-gallery figure:nth-child(n+4){display:block}}
+      @media(max-width:720px){.topbar{left:14px;right:14px;grid-template-columns:1fr auto}.language-links{grid-template-columns:repeat(2,auto)}.lang-link{min-height:30px;padding:0 7px;font-size:10px}.brand-mark{width:182px}.nav-grid{display:none}section{padding:58px 18px}.metadata,.role-grid,.brand-index,.case-list,.why-grid,.image-strip,.case-gallery,.atmosphere-grid{grid-template-columns:1fr}.feed-grid{grid-template-columns:repeat(2,1fr);gap:18px 8px}.feed-card p{display:none}.hero{min-height:92svh}.hero h1{font-size:42px;line-height:.98;letter-spacing:-.02em}h2{font-size:29px;line-height:1.12}summary{grid-template-columns:1fr 28px;gap:8px;padding:18px 0}summary span{grid-column:1/-1}summary strong{font-size:22px}.community-layout figure{min-height:360px}.role-card figure,.case-card figure,.brand-index figure{aspect-ratio:1.32}.image-strip figure:nth-child(n+4),.case-gallery figure:nth-child(n+4){display:none}.footer-wall{grid-template-columns:repeat(2,1fr)}.footer-meta{gap:22px}.contact-panel a,.contact-panel span{display:grid}}
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand-mark" href="#top" aria-label="CAMPsomeWHERE home"><img src="assets/web/logo-horizontal-2.png" alt="CAMPsomeWHERE" /></a>
+      <nav class="nav-grid" aria-label="Primary">
+        <a class="nav-pill" href="#feed">Feed</a>
+        <a class="nav-pill" href="#media">Media</a>
+        <a class="nav-pill" href="#community">Community</a>
+        <a class="nav-pill" href="#work">Work</a>
+        <a class="nav-pill" href="#cases">Cases</a>
+        <a class="nav-pill" href="#contact">Connect</a>
+      </nav>
+      <nav class="language-links" aria-label="Language">
+        <a class="lang-link" href="index.html">简体</a><a class="lang-link active" href="zh-hant.html" aria-current="page">繁體</a><a class="lang-link" href="en.html">EN</a><a class="lang-link" href="ja.html">JP</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <figure><img src="assets/web/cover.jpg" alt="CAMPsomeWHERE outdoor community field" /></figure>
+        <div class="hero-copy">
+          <div>
+            <div class="metadata"><span>Community</span><span>Outdoor Media</span><span>Creative</span></div>
+            <h1>內容驅動的<br />戶外媒體與社群平台</h1>
+          </div>
+          <aside class="hero-note">
+            <p>CAMPsomeWHERE 以內容建立理解，以社群建立信任，以真實場景完成體驗，並讓持續發生形成品牌記憶。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="feed" class="feed-section">
+        <header class="feed-head">
+          <div class="section-code">CSW MEDIA FEED<br />INSTAGRAM<br />LIVE FIELD NOTES</div>
+          <div><h2>官網第一眼，也應該看見 CSW 正在關注什麼。</h2><p class="lead">來自 Instagram 的現場、活動、觀察與行旅內容，作為進入 CSW 媒體平台的即時入口。</p></div>
+          <a class="feed-link" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">Open Instagram</a>
+        </header>
+        <div class="feed-grid">
+      <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
+        <figure><img src="assets/web/instagram-01.jpg" alt="现场更新" /></figure>
+        <div>
+          <span>現場更新</span>
+          <p>來自 CAMPsomeWHERE 社群、營地、城市與山野現場的即時內容。</p>
+        </div>
+      </a>
+    
+      <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
+        <figure><img src="assets/web/instagram-02.jpg" alt="活动发布" /></figure>
+        <div>
+          <span>活動發布</span>
+          <p>把即將發生和正在發生的活動，轉化為可被快速看見的媒體入口。</p>
+        </div>
+      </a>
+    
+      <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
+        <figure><img src="assets/web/instagram-03.jpg" alt="户外观察" /></figure>
+        <div>
+          <span>戶外觀察</span>
+          <p>持續記錄裝備、空間、人物、品牌與亞洲戶外文化的日常變化。</p>
+        </div>
+      </a>
+    
+      <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
+        <figure><img src="assets/web/fieldstyle.jpg" alt="FIELDSTYLE TOKYO" /></figure>
+        <div>
+          <span>FIELDSTYLE TOKYO</span>
+          <p>展會、品牌與亞洲戶外生活方式現場的持續觀察。</p>
+        </div>
+      </a>
+    
+      <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
+        <figure><img src="assets/web/project-tour.jpg" alt="CSW TOUR" /></figure>
+        <div>
+          <span>CSW TOUR</span>
+          <p>從城市到自然，把行旅現場轉化為可持續傳播的內容檔案。</p>
+        </div>
+      </a>
+    
+      <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
+        <figure><img src="assets/web/product.jpg" alt="Selection" /></figure>
+        <div>
+          <span>Selection</span>
+          <p>記錄產品、器物、裝備與日常戶外生活方式之間的關係。</p>
+        </div>
+      </a>
+    </div>
+      </section>
+
+      <section class="role-section">
+        <header class="section-head">
+          <div class="section-code">WHO WE ARE<br />COMMUNITY<br />OUTDOOR MEDIA</div>
+          <div><h2>CAMPsomeWHERE 是一個圍繞內容、社群與真實場景持續生長的戶外生活方式平台。</h2><p class="lead">我們透過內容建立理解，透過社群建立信任，透過真實場景完成體驗，並讓持續發生的項目成為可被記住的品牌記憶。</p></div>
+        </header>
+        <div class="role-grid">
+          <article class="role-card"><figure><img src="assets/web/content-main.jpg" alt="CSW media platform" /></figure><div><span class="tag">Outdoor Media</span><h3>持續發布的戶外媒體</h3><p>公眾號、小紅書、視頻號與 Instagram 共同構成內容平台，從日更資訊到專題、試驗場和行旅欄目持續沉澱。</p></div></article>
+          <article class="role-card"><figure><img src="assets/web/community-main.jpg" alt="CSW community network" /></figure><div><span class="tag">Community</span><h3>真實參與的社群網絡</h3><p>大灣區為核心，連接戶外愛好者、城市生活方式人群、創作者、品牌從業者與家庭親子人群。</p></div></article>
+          <article class="role-card"><figure><img src="assets/web/cover-detail.jpg" alt="CSW creative work" /></figure><div><span class="tag">Creative</span><h3>把真實場景轉化為品牌內容</h3><p>從內容企劃、活動場景到空間策展，CSW 把社群參與和戶外現場組織成可傳播、可複用的品牌資產。</p></div></article>
+        </div>
+      </section>
+
+      <section id="community" class="community-core">
+        <header class="section-head">
+          <div class="section-code">COMMUNITY CORE<br />GREATER BAY AREA<br />TRUST NETWORK</div>
+          <div><h2>以高信任度社群網絡，連接真實的戶外生活方式場景。</h2><p class="lead">CSW 社群由戶外愛好者、城市生活方式人群、創作者與品牌從業者共同構成，是內容共創、活動參與、空間實踐與長期協作的基礎。</p></div>
+        </header>
+        <div class="community-layout">
+          <figure><img src="assets/web/community-field.jpg" alt="CSW community field" /></figure>
+          <div class="fact-strip">
+            <article><span class="tag">People</span><h3>大灣區戶外與城市生活方式社群</h3><p>戶外與露營愛好者 / 城市生活方式人群 / 創作者 / 自由職業者 / 設計、媒體、品牌從業者 / 家庭與親子人群</p></article>
+            <article><span class="tag">Profile</span><p>大灣區為主，輻射全國。26-45 歲為主，男女均衡。</p></article>
+            <article><span class="tag">Value</span><p>真實使用場景中的高信任度觸達 / 可持續的複購與口碑擴散 / 適合長期共創與產品驗證的人群基礎</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="media" class="fold-section media-section">
+        <div class="fold-layout">
+          <aside class="fold-intro"><div class="section-code">CONTENT ECOSYSTEM<br />DAILY PICKUP<br />FIELD STORIES</div><h2>以持續發布的內容，連接戶外文化、城市生活與真實體驗。</h2><p class="lead">CSW 的內容體系覆蓋日常資訊、深度專題、社群試驗、工作坊與行旅共聚，從持續觀察到現場參與，沉澱戶外生活方式的內容資產。</p></aside>
+          <div class="fold-stack">
+      <details class="fold-item" open>
+        <summary><span>CSW Daily Pickup</span><strong>營事編集室</strong></summary>
+        <div class="fold-body">
+          <p>風格戶外領域每日更新的標杆資訊欄目</p>
+          <p>自 2025 年 9 月上線以來持續日更，覆蓋品牌、裝備、營地、店舖、活動與全球戶外潮流文化動態。</p>
+        </div>
+      </details>
+    
+      <details class="fold-item" >
+        <summary><span>CSW Feature</span><strong>營事專題組</strong></summary>
+        <div class="fold-body">
+          <p>風格戶外領域深度觀察與長期專題企劃欄目</p>
+          <p>長期深入亞洲戶外現場，透過專題報道、人物訪談與田野記錄，構建屬於這個時代的風格戶外文化檔案。</p>
+        </div>
+      </details>
+    
+      <details class="fold-item" >
+        <summary><span>CSW Field Lab</span><strong>營事試驗場</strong></summary>
+        <div class="fold-body">
+          <p>真實社群驗證與產品共創欄目</p>
+          <p>聯合品牌、創作者與社群成員，透過真實場景體驗、產品測試與內容共創，驗證產品價值並沉澱真實反饋。</p>
+        </div>
+      </details>
+    
+      <details class="fold-item" >
+        <summary><span>CSW Workshop</span><strong>營事實踐所</strong></summary>
+        <div class="fold-body">
+          <p>以興趣為起點的體驗共創欄目</p>
+          <p>透過露營、運動、攝影、手作等不同形式的主題活動，讓參與者在共同體驗中獲得新的知識、技能與視角。</p>
+        </div>
+      </details>
+    
+      <details class="fold-item" >
+        <summary><span>CSW Club</span><strong>營事俱樂部</strong></summary>
+        <div class="fold-body">
+          <p>長期發生的社群共聚與主題行旅欄目</p>
+          <p>透過營聚、行旅與共同經歷，連接擁有相似興趣與價值觀的人，形成持續發生的社群關係網絡。</p>
+        </div>
+      </details>
+    </div>
+        </div>
+        <div class="image-strip">
+          <figure><img src="assets/web/content-column.jpg" alt="CSW media content-column.jpg" /></figure><figure><img src="assets/web/csw-11.jpg" alt="CSW media csw-11.jpg" /></figure><figure><img src="assets/web/csw-18.jpg" alt="CSW media csw-18.jpg" /></figure><figure><img src="assets/web/csw-24.jpg" alt="CSW media csw-24.jpg" /></figure>
+        </div>
+      </section>
+
+      <section id="work" class="fold-section">
+        <div class="fold-layout">
+          <aside class="fold-intro"><div class="section-code">WHAT CSW DOES<br />PARTNERSHIP SYSTEM<br />CONTENT TO FIELD</div><h2>從內容合作到場景共創，幫助品牌進入真實的戶外生活方式語境。</h2><p class="lead">所有合作，均基於品牌目標、階段與資源條件進行定制組合。品牌可從單次內容合作開始，逐步進入活動與空間協作，最終形成長期階段協作。</p></aside>
+          <div class="fold-stack">
+  <details class="fold-item" open>
+    <summary><span>01</span><strong>內容製作與傳播</strong></summary>
+    <div class="fold-body">
+      <p>基於真實體驗的內容製作與傳播合作</p>
+      <ul><li>內容主題與叙事角度策劃</li><li>圖文與視頻內容成片</li><li>筛选匹配的創作者 / 达人參與</li><li>CAMPsomeWHERE 自媒體傳播發布</li></ul>
+      <div class="case-chips"><a class="case-chip" href="#case-playlogic">PLAYLOGIC x CSW｜大灣區寵物露營地圖</a><a class="case-chip" href="#case-csw-tour">多單位聯合支持｜CSW TOUR 日本风格戶外行</a><a class="case-chip" href="#case-little-moco-china-tour">little MO&amp;Co.｜CHINA TOUR</a></div>
+    </div>
+  </details>
+  <details class="fold-item">
+    <summary><span>02</span><strong>品牌活動 x 社群共創</strong></summary>
+    <div class="fold-body">
+      <p>从小規模深度私域，到 IP 級大型活動，以 CSW 社群為核心，構建真實體驗與內容傳播闭环。</p>
+      <div class="nested-folds">
+        
+              <details>
+                <summary>A / 品牌私域體驗活動</summary>
+                <p>半日到 1 日、小規模、强體驗 × 强情感連接</p>
+                <ul><li>活動主題與體驗策劃</li><li>現場執行與流程管理</li><li>基础體驗單元與場景设計</li><li>基于真實體驗的圖文內容記錄與分享</li><li>用戶筛选與社群組织（CSW 核心成員 / KOC）</li></ul>
+                
+                <a class="case-chip" href="#case-little-moco-vip">little MO&amp;Co. VIP 活動</a>
+              </details>
+            
+              <details>
+                <summary>B / 品牌社群型活動</summary>
+                <p>2-3 日、中等規模、多體驗模块并行</p>
+                <ul><li>整體創意與活動架構设計</li><li>多模块體驗內容與場景規劃</li><li>社群與合作方協同執行</li><li>活動前 / 中 / 後內容結構規劃</li><li>CSW 社群成員與垂類創作者參與</li><li>圖文與基础影像產出與傳播</li></ul>
+                
+                <a class="case-chip" href="#case-souls">自由之魂｜魂友會</a>
+              </details>
+            
+              <details>
+                <summary>C / IP 級活動</summary>
+                <p>多日 &amp; 多場景、200 人以上、多內容 &amp; 多單位</p>
+                <ul><li>項目級創意总策劃與整體活動架構设計</li><li>多單元、多場景活動系統規劃與執行</li><li>大規模社群、創作者與合作資源協同</li><li>完整內容與傳播結構規劃</li><li>影像內容、话題內容與多平台發布支持</li><li>現場統筹、導演級執行與管理</li></ul>
+                
+                <a class="case-chip" href="#case-bambini">bambini 露營節 &amp; 發布會</a>
+              </details>
+            
+              <details>
+                <summary>D / 社群工作坊（輕量共創模块）</summary>
+                <p>小規模、高信任度的社群共創形式，适用于品牌测試產品、深化关系、沉淀內容。</p>
+                
+                <article class="mini-note"><strong>體驗型工作坊</strong><p>强參與 × 强體驗</p><ul><li>體驗內容设計</li><li>社群成員組织</li><li>現場引導與執行</li><li>圖文記錄</li></ul><a class="case-chip" href="#case-banana-remake">蕉下社群活動《生刷 remake 工作坊》</a></article><article class="mini-note"><strong>学習型工作坊</strong><p>系統化內容 × 深度交流</p><ul><li>內容結構與课程设計</li><li>社群協同與執行</li><li>圖文內容整理</li></ul><a class="case-chip" href="#case-wood-time">廣州太古匯 VIP 活動《木作的时間》</a></article><article class="mini-note"><strong>探索型工作坊</strong><p>行動導向 × 多場景</p><ul><li>路線與活動设計</li><li>社群協作與執行</li><li>內容記錄與分享</li></ul><a class="case-chip" href="#case-brompton">BROMPTON《東山口骑行探索》</a></article>
+                
+              </details>
+            
+      </div>
+    </div>
+  </details>
+  <details class="fold-item">
+    <summary><span>03</span><strong>空間企劃</strong></summary>
+    <div class="fold-body">
+      <p>将戶外生活方式转化為可參與、可傳播的空間體驗</p>
+      <div class="nested-folds">
+        
+              <details>
+                <summary>A / 空間策展（中小尺度）</summary>
+                <p>商業體階段性主題事件 / 周末策展 / 短期內容</p>
+                <ul><li>策展主題與內容結構设計</li><li>空間動線與體驗模块規劃</li><li>社群導入與現場活動執行</li><li>圖文內容記錄與傳播</li></ul>
+                <a class="case-chip" href="#case-yifang-dongshan">一方東山「黑白營」</a>
+              </details>
+            
+              <details>
+                <summary>B / 空間策展（高复杂度）</summary>
+                <p>大型商業空間 / 戶外場地 / 多內容單元并行 / 高協同、高執行复杂度</p>
+                <ul><li>整體策展概念與空間系統设計</li><li>多單元內容與體驗模块規劃</li><li>社群、品牌與合作資源協同</li><li>現場統筹與階段性內容输出</li></ul>
+                <a class="case-chip" href="#case-lingnan-tiandi">天地岭南露營節</a>
+              </details>
+            
+              <details>
+                <summary>C / 快闪店 / 定制空間</summary>
+                <p>品牌快闪店 / 文化合作空間 / 發布會置景</p>
+                <ul><li>快闪主題與空間概念设計</li><li>在地文化 / 品牌內容共創</li><li>空間呈現與現場執行</li><li>內容記錄與傳播输出</li></ul>
+                <a class="case-chip" href="#case-custom-spaces">CSW 定制空間實践</a>
+              </details>
+            
+      </div>
+    </div>
+  </details>
+  <details class="fold-item">
+    <summary><span>04</span><strong>品牌階段協作系統</strong></summary>
+    <div class="fold-body">
+      <p>从場景进入，到表达升級，再到產品边界拓展，面向希望建立品牌心智與方法论的長期整合型合作方式。</p>
+      <div class="nested-folds">
+        
+              <details>
+                <summary>A / 場景級長期共創</summary>
+                <p>通過體驗载體與場景結構设計，让品牌在不同时間與空間中被反复使用、自然呈現，形成長期內容資產與使用記忆。</p>
+                
+                <a class="case-chip" href="#case-campton-flow-icar">灣野风流 × iCAR</a>
+              </details>
+            
+              <details>
+                <summary>B / 品牌成長協作</summary>
+                <p>解决品牌如何进入更廣阔的市場與行業语境。</p>
+                <ul><li>國际展會聯合參與與共同呈現</li><li>将參展與交流转化為內容與傳播結構</li><li>內容、社群與在地資源的自然連接</li><li>品牌表达體系與市場语境升級</li></ul>
+                <a class="case-chip" href="#case-oide-fieldstyle">OIDE / FIELD STYLE 相关實践</a>
+              </details>
+            
+              <details>
+                <summary>C / 產品 × 內容共創</summary>
+                <p>解决品牌如何通過共創拓展產品边界。</p>
+                <ul><li>產品概念與共創逻輯梳理</li><li>设計方向與內容语境協同</li><li>聯名形式探索與產品線共創</li><li>设計、制作與供應链資源協作</li></ul>
+                <a class="case-chip" href="#case-black-thorn-msquare">BLACK THORN &amp; M SQUARE</a>
+              </details>
+            
+      </div>
+    </div>
+  </details>
+</div>
+        </div>
+        <div class="atmosphere-grid">
+          <figure><img src="assets/web/csw-27.jpg" alt="CSW work csw-27.jpg" /></figure><figure><img src="assets/web/csw-29.jpg" alt="CSW work csw-29.jpg" /></figure><figure><img src="assets/web/csw-33.jpg" alt="CSW work csw-33.jpg" /></figure><figure><img src="assets/web/csw-36.jpg" alt="CSW work csw-36.jpg" /></figure><figure><img src="assets/web/csw-40.jpg" alt="CSW work csw-40.jpg" /></figure>
+        </div>
+      </section>
+
+      <section id="cases" class="case-section">
+        <header class="section-head">
+          <div class="section-code">CASE STUDIES<br />FIELD RECORDS<br />BRAND PROJECTS</div>
+          <div><h2>每一個案例，都是內容、社群與場景共同完成的一次真實發生。</h2><p class="lead">從內容欄目、品牌活動、空間策展到長期協作，CSW 將品牌目標轉化為具體可參與、可傳播、可沉澱的生活方式項目。</p></div>
+        </header>
+        
+      <details class="case-group" open>
+        <summary><span>Content</span><strong>3 Cases</strong></summary>
+        <div class="case-list">
+          
+                <article id="case-playlogic" class="case-card">
+                  <figure><img src="assets/web/project-playlogic.jpg" alt="PLAYLOGIC x CSW｜大湾区宠物露营地图" /></figure>
+                  <div class="case-copy"><span>欄目合作</span><h3>PLAYLOGIC x CSW｜大灣區寵物露營地圖</h3><p>以编輯策劃沉淀可長期傳播的實用型內容資產。</p><details class="card-detail"><summary>CASE NOTES</summary><ul><li>《營事专題組》自有欄目承载</li><li>编輯策劃主導內容結構</li><li>聯合創作與信息整合</li><li>形成高保存、高转發內容</li></ul></details></div>
+                </article>
+              
+                <article id="case-csw-tour" class="case-card">
+                  <figure><img src="assets/web/csw-50.jpg" alt="多单位联合支持｜CSW TOUR 日本风格户外行" /></figure>
+                  <div class="case-copy"><span>欄目合作</span><h3>多單位聯合支持｜CSW TOUR 日本风格戶外行</h3><p>立體呈現日本风格戶外的行旅內容企劃。</p><details class="card-detail"><summary>CASE NOTES</summary><ul><li>《營事俱乐部》自有欄目承载</li><li>展會 × 在地 × 自然的多場景行旅</li><li>M SQUARE、PAPERSKY、CIRCLES 等聯合支持參與</li></ul></details></div>
+                </article>
+              
+                <article id="case-little-moco-china-tour" class="case-card">
+                  <figure><img src="assets/web/project-lm.jpg" alt="little MO&amp;Co.｜CHINA TOUR" /></figure>
+                  <div class="case-copy"><span>定制內容</span><h3>little MO&amp;Co.｜CHINA TOUR</h3><p>以內容策劃構建品牌价值觀叙事結構。</p><details class="card-detail"><summary>CASE NOTES</summary><ul><li>CSW 為品牌定制的長期內容欄目</li><li>以親子行旅為真實內容線索</li><li>結合每季產品主題與品牌价值输出</li><li>从線路策劃、內容制作到宣發傳播一體化執行</li><li>沉淀為品牌可持續使用的長期內容資產</li></ul></details></div>
+                </article>
+              
+        </div>
+      </details>
+    
+      <details class="case-group" >
+        <summary><span>Community Events</span><strong>6 Cases</strong></summary>
+        <div class="case-list">
+          
+                <article id="case-little-moco-vip" class="case-card">
+                  <figure><img src="assets/web/csw-25.jpg" alt="little MO&amp;Co. VIP 活动" /></figure>
+                  <div class="case-copy"><span>品牌私域體驗活動</span><h3>little MO&amp;Co. VIP 活動</h3><p>親子共学 / 戶外美学 / 自然手作 / 直火料理 / 山野探索 / 职人艺术</p></div>
+                </article>
+              
+                <article id="case-souls" class="case-card">
+                  <figure><img src="assets/web/project-souls.jpg" alt="自由之魂｜魂友会" /></figure>
+                  <div class="case-copy"><span>品牌社群型活動</span><h3>自由之魂｜魂友會</h3><p>戶外美学 / 新品體驗 / 品牌市集 / 兴趣社群 / 體驗课程</p></div>
+                </article>
+              
+                <article id="case-bambini" class="case-card">
+                  <figure><img src="assets/web/csw-26.jpg" alt="bambini 露营节 &amp; 发布会" /></figure>
+                  <div class="case-copy"><span>IP 級活動</span><h3>bambini 露營節 &amp; 發布會</h3><p>戶外美学 / 风格露營 / 品牌快闪 / 活動直播 / 自然手作 / 親子游乐 / 大地音乐 / 职人艺术 / 直火料理 / 野趣探索</p></div>
+                </article>
+              
+                <article id="case-banana-remake" class="case-card">
+                  <figure><img src="assets/web/csw-31.jpg" alt="蕉下社群活动《生刷 remake 工作坊》" /></figure>
+                  <div class="case-copy"><span>體驗型工作坊</span><h3>蕉下社群活動《生刷 remake 工作坊》</h3><p>强參與 × 强體驗</p></div>
+                </article>
+              
+                <article id="case-wood-time" class="case-card">
+                  <figure><img src="assets/web/csw-32.jpg" alt="广州太古汇 VIP 活动《木作的时间》" /></figure>
+                  <div class="case-copy"><span>学習型工作坊</span><h3>廣州太古匯 VIP 活動《木作的时間》</h3><p>系統化內容 × 深度交流</p></div>
+                </article>
+              
+                <article id="case-brompton" class="case-card">
+                  <figure><img src="assets/web/project-brompton.jpg" alt="BROMPTON《东山口骑行探索》" /></figure>
+                  <div class="case-copy"><span>探索型工作坊</span><h3>BROMPTON《東山口骑行探索》</h3><p>行動導向 × 多場景</p></div>
+                </article>
+              
+        </div>
+      </details>
+    
+      <details class="case-group" >
+        <summary><span>Space</span><strong>3 Cases</strong></summary>
+        <div class="case-list">
+          
+                <article id="case-yifang-dongshan" class="case-card">
+                  <figure><img src="assets/web/space-main.jpg" alt="一方东山「黑白营」" /></figure>
+                  <div class="case-copy"><span>空間策展（中小尺度）</span><h3>一方東山「黑白營」</h3><p>商業體階段性主題事件 / 周末策展 / 短期內容</p></div>
+                </article>
+              
+                <article id="case-lingnan-tiandi" class="case-card">
+                  <figure><img src="assets/web/space-detail.jpg" alt="天地岭南露营节" /></figure>
+                  <div class="case-copy"><span>空間策展（高复杂度）</span><h3>天地岭南露營節</h3><p>大型商業空間 / 戶外場地 / 多內容單元并行 / 高協同、高執行复杂度</p></div>
+                </article>
+              
+                <article id="case-custom-spaces" class="case-card">
+                  <figure><img src="assets/web/csw-59.jpg" alt="CSW 定制空间实践" /></figure>
+                  <div class="case-copy"><span>快闪店 / 定制空間</span><h3>CSW 定制空間實践</h3><p>CSW @ 廣州二丁里 / CSW 慢闪店 @ 上海龙华里 / 「灣野风流」特展 @ ampm / YAMA GUEST 發布會风格戶外置景</p></div>
+                </article>
+              
+        </div>
+      </details>
+    
+      <details class="case-group" >
+        <summary><span>Long-term</span><strong>3 Cases</strong></summary>
+        <div class="case-list">
+          
+                <article id="case-campton-flow-icar" class="case-card">
+                  <figure><img src="assets/web/project-icar-wide.jpg" alt="湾野风流 × iCAR" /></figure>
+                  <div class="case-copy"><span>場景級長期共創</span><h3>灣野风流 × iCAR</h3><p>通過體驗载體與場景結構设計，让品牌在不同时間與空間中被反复使用、自然呈現，形成長期內容資產與使用記忆。</p><details class="card-detail"><summary>CASE NOTES</summary><ul><li>移動體驗载體構建</li><li>多場景真實使用（營地 × 城市 × 行旅）</li><li>高頻自然露出，持續參與多場活動 &amp; 跨場景實践</li><li>多品牌生活方式共創</li></ul></details></div>
+                </article>
+              
+                <article id="case-oide-fieldstyle" class="case-card">
+                  <figure><img src="assets/web/csw-58.jpg" alt="OIDE / FIELD STYLE 相关实践" /></figure>
+                  <div class="case-copy"><span>品牌成長協作</span><h3>OIDE / FIELD STYLE 相关實践</h3><p>建立“灣野风流”組团，參與焚火大會、OIDE 等國內戶外生活盛事；多次組织國內原創戶外生活單位參與全亚洲最大戶外嘉年华 FIELD STYLE。</p></div>
+                </article>
+              
+                <article id="case-black-thorn-msquare" class="case-card">
+                  <figure><img src="assets/web/csw-60.jpg" alt="BLACK THORN &amp; M SQUARE" /></figure>
+                  <div class="case-copy"><span>產品 × 內容共創</span><h3>BLACK THORN &amp; M SQUARE</h3><p>聯動艺术單位 BLACK THORN 與旅行收纳品牌 M SQUARE，持續推行創新的內容企劃合作。</p></div>
+                </article>
+              
+        </div>
+      </details>
+    
+        <div class="case-gallery">
+          <figure><img src="assets/web/csw-34.jpg" alt="CSW case csw-34.jpg" /></figure><figure><img src="assets/web/csw-35.jpg" alt="CSW case csw-35.jpg" /></figure><figure><img src="assets/web/csw-37.jpg" alt="CSW case csw-37.jpg" /></figure><figure><img src="assets/web/csw-38.jpg" alt="CSW case csw-38.jpg" /></figure><figure><img src="assets/web/csw-42.jpg" alt="CSW case csw-42.jpg" /></figure><figure><img src="assets/web/csw-48.jpg" alt="CSW case csw-48.jpg" /></figure>
+        </div>
+      </section>
+
+      <section class="brand-section">
+        <header class="section-head">
+          <div class="section-code">BRAND MATRIX<br />WHY CSW<br />CULTURE TOUCHPOINTS</div>
+          <div><h2>圍繞內容、空間與原創品牌，持續建立戶外生活方式觸點。</h2></div>
+        </header>
+        <div class="brand-index"><article><figure><img src="assets/web/csw-43.jpg" alt="东平士多" /></figure><div><span>廣州</span><h3>東平士多</h3><p>社區空間 × 內容發生地<br>廣州社區生活方式空間，也是 CSW 活動、內容與社群實践的重要據点，持續連接骑行、露營、手作與城市兴趣社群。</p></div></article><article><figure><img src="assets/web/csw-44.jpg" alt="金鱼社区" /></figure><div><span>佛山</span><h3>金鱼社區</h3><p>年輕生活方式社區<br>由佛山老城區院落更新而來的青年文化聚落，聚集骑行、咖啡、音乐、植物、市集等多元內容，探索城市社區與青年文化的新連接方式。</p></div></article><article><figure><img src="assets/web/csw-45.jpg" alt="豹之十二卷" /></figure><div><span>CSW</span><h3>豹之十二卷</h3><p>植物潮流生活品牌<br>以十二卷多肉植物為核心，連接城市生活與自然美学，持續探索植物、器物與生活方式之間更具創造力的表达方式。</p></div></article><article><figure><img src="assets/web/csw-46.jpg" alt="岙由 ULG" /></figure><div><span>CSW</span><h3>岙由 ULG</h3><p>女性輕戶外生活品牌<br>从女性視角出發，关注輕量化戶外與日常生活之間的場景連接，探索属于亚洲女性的戶外生活方式。</p></div></article><article><figure><img src="assets/web/csw-47.jpg" alt="湾野风流" /></figure><div><span>CSW</span><h3>灣野风流</h3><p>原創生活方式品牌聯盟<br>由多個原創戶外、生活方式與文化單位共同發起的品牌集合實践，通過內容、活動與聯合呈現，探索中國原創生活方式品牌的協作可能。</p></div></article></div>
+        <div class="why-grid"><article><span class="tag">01</span><h3>想象力</h3><p>內容結構與叙事能力</p></article><article><span class="tag">02</span><h3>內容力</h3><p>持續發生的真實內容</p></article><article><span class="tag">03</span><h3>執行力</h3><p>复杂項目稳定落地</p></article><article><span class="tag">04</span><h3>凝聚力</h3><p>高信任度社群網絡</p></article></div>
+      </section>
+
+      <section id="contact" class="contact">
+        <header class="section-head">
+          <div class="section-code">CONTACT US<br />PARTNERSHIP PATH<br />CONTEXT FIRST</div>
+          <div><h2>與 CSW 一起，把品牌目標轉化為真實發生的內容、社群與場景。</h2><p class="lead">階段一：內容合作 / 私域活動 / 階段二：社群型活動 / 空間策展 / 階段三：品牌階段協作系統</p></div>
+        </header>
+        <aside class="contact-panel">
+          <a href="mailto:info@campsomewhere.com"><span>Email</span><strong>info@campsomewhere.com</strong></a>
+          <a href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@camp_some_where</strong></a>
+          <span><span>Website</span><strong>www.campsomewhere.com</strong></span>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-wall">
+        <figure><img src="assets/web/csw-49.jpg" alt="CAMPsomeWHERE footer csw-49.jpg" /></figure><figure><img src="assets/web/csw-51.jpg" alt="CAMPsomeWHERE footer csw-51.jpg" /></figure><figure><img src="assets/web/csw-53.jpg" alt="CAMPsomeWHERE footer csw-53.jpg" /></figure><figure><img src="assets/web/csw-55.jpg" alt="CAMPsomeWHERE footer csw-55.jpg" /></figure><figure><img src="assets/web/csw-57.jpg" alt="CAMPsomeWHERE footer csw-57.jpg" /></figure><figure><img src="assets/web/csw-56.jpg" alt="CAMPsomeWHERE footer csw-56.jpg" /></figure>
+      </div>
+      <div class="footer-meta">
+        <p class="mono">©2026 CAMPsomeWHERE<br />Community / Outdoor Media / Creative</p>
+        <p>以內容、社群與真實場景連接戶外生活方式文化，持續記錄正在發生的人、地方與品牌項目。</p>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#media">Media</a>
+          <a href="#community">Community</a>
+          <a href="#work">Work</a>
+          <a href="#cases">Cases</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <figure class="footer-logo"><img src="assets/web/logo-white.png" alt="CAMPsomeWHERE" /></figure>
+    </footer>
+  </body>
+</html>
