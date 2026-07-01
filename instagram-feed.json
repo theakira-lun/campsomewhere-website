@@ -1,0 +1,43 @@
+{
+  "source": "local-curated",
+  "profile": "https://www.instagram.com/camp_some_where/",
+  "syncedAt": "2026-06-10T00:00:00+08:00",
+  "items": [
+    {
+      "title": "现场更新",
+      "caption": "来自 CAMPsomeWHERE 社群、营地、城市与山野现场的即时内容。",
+      "media_url": "/assets/web/instagram-01.jpg",
+      "permalink": "https://www.instagram.com/camp_some_where/"
+    },
+    {
+      "title": "活动发布",
+      "caption": "把即将发生和正在发生的活动，转化为可被快速看见的媒体入口。",
+      "media_url": "/assets/web/instagram-02.jpg",
+      "permalink": "https://www.instagram.com/camp_some_where/"
+    },
+    {
+      "title": "户外观察",
+      "caption": "持续记录装备、空间、人物、品牌与亚洲户外文化的日常变化。",
+      "media_url": "/assets/web/instagram-03.jpg",
+      "permalink": "https://www.instagram.com/camp_some_where/"
+    },
+    {
+      "title": "FIELDSTYLE TOKYO",
+      "caption": "展会、品牌与亚洲户外生活方式现场的持续观察。",
+      "media_url": "/assets/web/fieldstyle.jpg",
+      "permalink": "https://www.instagram.com/camp_some_where/"
+    },
+    {
+      "title": "CSW TOUR",
+      "caption": "从城市到自然，把行旅现场转化为可持续传播的内容档案。",
+      "media_url": "/assets/web/project-tour.jpg",
+      "permalink": "https://www.instagram.com/camp_some_where/"
+    },
+    {
+      "title": "Selection",
+      "caption": "记录产品、器物、装备与日常户外生活方式之间的关系。",
+      "media_url": "/assets/web/product.jpg",
+      "permalink": "https://www.instagram.com/camp_some_where/"
+    }
+  ]
+}
