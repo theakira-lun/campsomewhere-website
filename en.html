@@ -65,7 +65,7 @@
           <div><h2>The first view should show what CSW is watching now.</h2><p class="lead">Field scenes, events, observations and journeys from Instagram form a live entry into the CSW media platform.</p></div>
           <a class="feed-link" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">Open Instagram</a>
         </header>
-        <div class="feed-grid">
+        <div class="feed-grid" data-instagram-feed data-feed-endpoint="instagram-feed.json">
       <a class="feed-card" href="https://www.instagram.com/camp_some_where/" target="_blank" rel="noreferrer">
         <figure><img src="assets/web/instagram-01.jpg" alt="现场更新" /></figure>
         <div>
@@ -465,5 +465,46 @@
       </div>
       <figure class="footer-logo"><img src="assets/web/logo-white.png" alt="CAMPsomeWHERE" /></figure>
     </footer>
+    
+    <script>
+      (() => {
+        const grid = document.querySelector("[data-instagram-feed]");
+        if (!grid) return;
+
+        const endpoint = grid.dataset.feedEndpoint || "instagram-feed.json";
+        const escapeHtml = (value = "") =>
+          String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;");
+
+        const titleFromCaption = (caption = "") => {
+          const firstLine = String(caption).split("\n").find(Boolean) || "Instagram Update";
+          return firstLine.length > 72 ? firstLine.slice(0, 69) + "..." : firstLine;
+        };
+
+        const render = (items = []) => {
+          const cards = items
+            .filter((item) => item && item.media_url && item.permalink)
+            .slice(0, 6)
+            .map((item) => {
+              const title = item.title || titleFromCaption(item.caption);
+              const caption = item.caption || "";
+              return '<a class="feed-card" href="' + escapeHtml(item.permalink) + '" target="_blank" rel="noreferrer">' +
+                '<figure><img src="' + escapeHtml(item.media_url) + '" alt="' + escapeHtml(title) + '" loading="lazy" /></figure>' +
+                '<div><span>' + escapeHtml(title) + '</span><p>' + escapeHtml(caption) + '</p></div>' +
+              '</a>';
+            })
+            .join("");
+          if (cards) grid.innerHTML = cards;
+        };
+
+        fetch(endpoint, { cache: "no-store" })
+          .then((response) => (response.ok ? response.json() : Promise.reject(new Error("Feed unavailable"))))
+          .then((data) => render(data.items || []))
+          .catch(() => {});
+      })();
+    </script>
   </body>
 </html>
